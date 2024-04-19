@@ -3,9 +3,10 @@
 ai scaffolded todo list....
 
 - [ ] Design the UI
-  - [ ] Choose color scheme
-  - [ ] Choose typography
-  - [ ] Design layout for different sections
+  - [ ] Bentobox wrapper
+  - [ ] Desktop header
+  - [ ] Mobile header
+    - [ ] Navigation
 
 - [ ] Retrieve GitHub Stats
   - [ ] Display number of repositories
