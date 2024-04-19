@@ -6,6 +6,13 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --body: #050505;
+  --card: #0f0f0f;
+  --card-alt: #1a1a1a;
+  --text-regular: #0f0f0f;
+  --pink: #ac99ff;
+  --green: #00cc96;
+  --white: #e6e6e6;
 }
 
 @media (prefers-color-scheme: dark) {

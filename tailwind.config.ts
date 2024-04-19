@@ -8,6 +8,28 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        regular: "var(--regular)",
+        green: 'var(--green)',
+        pink: "var(--pink)",
+        body : "var(--body)",
+        card : "var(--card)",
+        white: "var(--white)",
+        cardalt: "var(--card-alt)",
+      },
+      backgroundColor: {
+        primary: "var(--primary)",
+        secondary: "var(--secondary)",
+        regular: "var(--regular)",
+        green: 'var(--green)',
+        pink: "var(--pink)",
+        body : "var(--body)",
+        card : "var(--card)",
+        white: "var(--white)",
+        cardalt: "var(--card-alt)",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
