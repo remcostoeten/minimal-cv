@@ -3,9 +3,9 @@ import Intro from "@/components/pages/homepage/Intro";
 
 export default function page() {
   return (
-    <>
+    <div className="!bg-body">
       <Intro />
       <FontShowcase />
-    </>
+    </div>
   );
 }
