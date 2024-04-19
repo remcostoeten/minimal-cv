@@ -13,7 +13,6 @@
   --pink: #ac99ff;
   --green: #00cc96;
   --white: #e6e6e6;
-  --themared: red;
   --radius: 30px;
 }
 
@@ -25,3 +24,18 @@
   }
 }
 
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

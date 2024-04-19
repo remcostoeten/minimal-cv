@@ -8,6 +8,31 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#050505",
+        secondary: "#0f0f0f",
+        regular: "#1a1a1a",
+        green: "#00cc96",
+        pink: "#ac99ff",
+        body: "#050505",
+        card: "#0f0f0f",
+        white: "#e6e6e6",
+        cardalt: "#1a1a1a",
+      },
+      backgroundColor: {
+        primary: "#050505",
+        secondary: "#0f0f0f",
+        regular: "#1a1a1a",
+        green: "#00cc96",
+        pink: "#ac99ff",
+        body: "#050505",
+        card: "#0f0f0f",
+        white: "#e6e6e6",
+        cardalt: "#1a1a1a",
+      },
+      borderRadius: {
+        radius: "30px",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
