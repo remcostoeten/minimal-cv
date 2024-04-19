@@ -13,6 +13,7 @@
   --pink: #ac99ff;
   --green: #00cc96;
   --white: #e6e6e6;
+  --radius: 30px;
 }
 
 @media (prefers-color-scheme: dark) {

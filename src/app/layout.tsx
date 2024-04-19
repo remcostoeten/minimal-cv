@@ -11,18 +11,19 @@ export const metadata: Metadata = {
   description: "A minimal landing page  ",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={baj.className}>
+    <html lang="en" className=''>
+      <body className={`${baj.className} body-bg`}>
         <TopMenu/>
         <TopmenuTwo/>
         {children}
       </body>
     </html>
-  );
+  )
 }

@@ -30,6 +30,9 @@ const config: Config = {
         white: "var(--white)",
         cardalt: "var(--card-alt)",
       },
+      borderRadius: {
+        'radius': "var(--radius)"
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
