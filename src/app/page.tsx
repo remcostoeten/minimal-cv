@@ -1,8 +1,11 @@
-import PageShell from "@/components/shells/PageShell";
-import Image from "next/image";
+import FontShowcase from "@/components/_tests_ui_design_system/font-showcase";
+import Intro from "@/components/pages/homepage/Intro";
 
-export default function Home() {
+export default function page() {
   return (
-    <PageShell>Hi</PageShell>
+    <>
+      <Intro />
+      <FontShowcase />
+    </>
   );
 }
