@@ -1,43 +1,81 @@
-
-'use client';
-import React from 'react';
+'use client'
+import React, { ReactElement } from 'react';
 import { motion } from 'framer-motion';
+import Pill from '../core/Pill';
+import { pills } from '@/core/data/homepage';
 
-const slides = [
-    { number: 1 },
-    { number: 2 },
-    { number: 3 },
-    { number: 4 },
-    { number: 5 },
-];
+const slidesRow1: ReactElement[] = pills.map((pill, index) => <Pill key={index}>{pill}</Pill>);
+const slidesRow2: ReactElement[] = pills.slice().reverse().map((pill, index) => <Pill key={index}>{pill}</Pill>); // Reverse order for the second row
+const slidesRow3: ReactElement[] = pills.map((pill, index) => <Pill key={index}>{pill}</Pill>);
 
-const InfiniteSlider = () => {
-    // Duplicate the slides array to ensure seamless looping
-    const duplicatedSlides = [...slides, ...slides];
-
+const InfiniteSlider: React.FC = () => {
     return (
-        <div className="relative w-full overflow-hidden">
-            {/* Wrapping div for seamless looping */}
-            <motion.div
-                className="flex"
-                animate={{
-                    x: ['-100%', '0%'],
-                    transition: {
-                        ease: 'linear',
-                        duration: 5,
-                        repeat: Infinity,
-                    }
-                }}
-            >
-                {duplicatedSlides.map((slide, index) => (
-                    <div key={index} className="flex-shrink-0" style={{ width: `${100 / slides.length}%` }}>
-                        <div className="flex flex-col items-center justify-center h-full text-6xl">
-                            {slide.number}
-                        </div>
-                    </div>
-                ))}
-            </motion.div>
-        </div>
+        <div className="relative w-max overflow-hidden infinite-slider-fade">
+            <div className="flex w-full">
+                <div className="flex-shrink-0" style={{ overflowX: 'auto' }}>
+                    <motion.div
+                        className="flex"
+                        animate={{
+                            x: ['-65%', '0%'],
+                            transition: {
+                                ease: 'linear',
+                                duration: 80,
+                                repeat: Infinity,
+                            }
+                        }}
+                    >
+                        {slidesRow1.map((slide, index) => (
+                            <div key={index} className="flex items-center justify-center h-full text-6xl">
+                                {slide}
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
+            </div>
+            <div className="flex w-full mt-4">
+                <div className="flex-shrink-0" style={{ overflowX: 'auto' }}>
+                    <motion.div
+                        className="flex"
+                        animate={{
+                            // Swap the values to make the slide move in the reverse direction
+                            x: ['0%', '-90%'],
+                            transition: {
+                                ease: 'linear',
+                                duration: 80,
+                                repeat: Infinity,
+                            }
+                        }}
+                    >
+                        {slidesRow2.map((slide, index) => (
+                            <div key={index} className="flex items-center justify-center h-full text-6xl">
+                                {slide}
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
+            </div>
+            <div className="flex w-full mt-4">
+                <div className="flex-shrink-0" style={{ overflowX: 'auto' }}>
+                    <motion.div
+                        className="flex"
+                        animate={{
+                            x: ['-80%', '0%'],
+                            transition: {
+                                ease: 'linear',
+                                duration: 85,
+                                repeat: Infinity,
+                            }
+                        }}
+                    >
+                        {slidesRow3.map((slide, index) => (
+                            <div key={index} className="flex items-center justify-center h-full text-6xl">
+                                {slide}
+                            </div>
+                        ))}
+                    </motion.div>
+                </div>
+            </div>
+        </div >
     );
 };
 

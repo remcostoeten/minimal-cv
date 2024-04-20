@@ -1,26 +1,27 @@
 import Flex from '@/components/core/Flexer'
+import Pill from '@/components/core/Pill'
 import InfiniteSlider from '@/components/effects/InfiniteSlider'
 import BentoBox from '@/components/shells/BentoShell'
 import React from 'react'
 
 export default function SecondSection() {
     return (
-        <div className='flex w-full gap-24'>
+        <div className='grid grid-cols-2 gap-24 overflow-hidden'>
             <BentoBox width='full'>
                 <div className='flex flex-col gap-4'>
                     <BentoTitle icon={locationIcon()}>Lemmer, the Netherlands</BentoTitle>
                 </div>
-
             </BentoBox>
             <BentoBox width='full'>
                 <div className='flex flex-col gap-4'>
                     <BentoTitle icon={SkillIcon()}>Skills</BentoTitle>
-                    <InfiniteSlider />
+                    <InfiniteSlider /> {/* Pass fadeOutskirts prop */}
                 </div>
             </BentoBox>
-        </div >
+        </div>
     )
 }
+
 
 const BentoTitle = ({ children, icon }) => {
     return (

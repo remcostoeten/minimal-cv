@@ -14,9 +14,10 @@ export default function BentoBox({
     width = "full",
     ...props
 }: BentoBoxProps) {
+
     return (
         <div
-            className={`font flex gap-[24px] flex-col px-6 py-7 shadow-sm rounded-[30px] max-md:px-5 max-md:max-w-full bg-${bg} text-${color} w-${width}`}
+            className={`font flex gap-[24px] flex-col px-6 py-7 shadow-sm rounded-[30px] max-md:px-5 max-md:max-w-full bg-${bg} text-${color} w-${width} $`}
             {...props}
         >
             {children}
