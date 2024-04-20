@@ -2,14 +2,15 @@
 
 ai scaffolded todo list....
 
-- [ ] Design the UI
-  - [ ] Bentobox wrapper
-  - [ ] Desktop header
-  - [ ] Mobile header
-    - [ ] Navigation
+ui
+- [ ] Add a header
+- [ ] Add a footer
+- [ ] Color scheme for threejs globe
 
-- [ ] Retrieve GitHub Stats
-  - [ ] Display number of repositories
+data
+- [ ] retrtieve github stats
+- [ ] come up with relevant skills for the bento slider (homepage.ts)
+    _____________________
 
 - [ ] Add Projects Section
   - [ ] List all projects

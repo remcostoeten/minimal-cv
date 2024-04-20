@@ -11,7 +11,7 @@ type HeadingProps = {
 export default function Heading({
   children,
   as,
-  size = "text-2xl",
+  size = "36",
   color = "text-neutral-200",
   maxWidth,
   ...props
@@ -19,7 +19,7 @@ export default function Heading({
   const Component = as;
 
   return (
-    <Component className={`${size} ${color} ${maxWidth}`} {...props}>
+    <Component className={`text-${size} ${color} ${maxWidth}`} {...props}>
       {children}
     </Component>
   );

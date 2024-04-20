@@ -21,8 +21,8 @@ const config = {
     extend: {
       backgroundColor: {
         body: "var(--body)",
-        card: "var(--card)",
-        "card-alt": "var(--card-alt)",
+        card: "#0f0f0f",
+        cardalt: "#1a1a1a",
         pink: "var(--pink)",
         white: "var(--white)",
         green: "var(--green)",
@@ -62,7 +62,7 @@ const config = {
           foreground: "hsl(var(--popover-foreground))",
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
+          DEFAULT: "hsl(#0f0f0f)",
           foreground: "hsl(var(--card-foreground))",
         },
       },
@@ -71,6 +71,25 @@ const config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
         radius: "var(--radius)",
+      },
+      width: {
+        page: "800px",
+      },
+      spaceY: {
+        24: "24px",
+      },
+      gap: {
+        24: "24px",
+      },
+      fontSize: {
+        36: "36px",
+      },
+      padding: {
+        24: "24px",
+        page: "24px 24px 102px",
+      },
+      height: {
+        260: "260px",
       },
       keyframes: {
         "accordion-down": {

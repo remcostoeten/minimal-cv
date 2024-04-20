@@ -1,7 +1,7 @@
 import * as React from "react";
 export default function Intro() {
   return (
-    <div className="flex flex-col px-6 py-7 mt-6 shadow-sm bg-stone-950 leading-[120%] rounded-[30px] max-md:px-5 max-md:max-w-full">
+    <div className="flex flex-col px-6 py-7 mt-6 shadow-sm bg-card leading-[120%] rounded-[30px] max-md:px-5 max-md:max-w-full">
       <div className="text-4xl text-neutral-200 max-md:max-w-full">
         Hello there! Leon here!
       </div>
