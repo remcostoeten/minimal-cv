@@ -1,28 +1,28 @@
 import { Children } from "react";
 
 type HeadingProps = {
-  as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  size?: "text-36" | "text-xl" | "text-2xl" | "text-3xl" | "text-4xl" | string;
-  color?: "text-neutral-200" | "text-neutral-300" | "text-neutral-400" | string;
-  maxWidth?: "max-w-full" | "max-w-md" | "max-w-lg" | "max-w-xl" | string;
-  children: React.ReactNode;
+    as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+    size?: "text-36" | "text-xl" | "text-2xl" | "text-3xl" | "text-4xl" | string;
+    color?: "text-neutral-200" | "text-neutral-300" | "text-neutral-400" | string;
+    maxWidth?: "max-w-full" | "max-w-md" | "max-w-lg" | "max-w-xl" | string;
+    children: React.ReactNode;
 };
 
 export default function Heading({
-  children,
-  as,
-  size = "text-2xl",
-  color = "text-neutral-200",
-  maxWidth,
-  ...props
+    children,
+    as,
+    size = "36",
+    color = "text-neutral-200",
+    maxWidth,
+    ...props
 }: HeadingProps) {
-  const Component = as;
+    const Component = as;
 
-  return (
-    <Component className={`${size} ${color} ${maxWidth}`} {...props}>
-      {children}
-    </Component>
-  );
+    return (
+        <Component className={`text-${size} ${color} ${maxWidth}`} {...props}>
+            {children}
+        </Component>
+    );
 }
 
 /**

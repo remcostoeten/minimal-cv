@@ -1,23 +1,18 @@
-import React, { ReactNode, HTMLAttributes } from "react";
+import Flex from '../core/Flexer'
 
-interface BentoBoxProps extends HTMLAttributes<HTMLDivElement> {
-  children: ReactNode;
-  bg?: string;
-  color?: string;
+const PageShell = ({ children }) => {
+    return (
+        <Flex as='main' wrap='nowrap' dir='col' justify='start' className='min-h-screen gap-24 p-page w-page relative mx-auto '>
+            {children}
+        </Flex >
+    )
 }
 
-export default function BentoBox({
-  children,
-  bg = "stone-950",
-  color = "neutral-200",
-  ...props
-}: BentoBoxProps) {
-  return (
-    <div
-      className={`flex flex-col px-6 py-7 mt-6 shadow-sm rounded-[30px] max-md:px-5 max-md:max-w-full bg-${bg} text-${color}`}
-      {...props}
-    >
-      {children}
-    </div>
-  );
+const Container = ({ children }) => {
+    return (
+        <div className='w-page flex justify-center mx-auto'>{children}</div>
+    )
 }
+
+export default PageShell;
+export { Container };
