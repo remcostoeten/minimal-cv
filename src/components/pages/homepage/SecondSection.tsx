@@ -1,4 +1,5 @@
 import Flex from '@/components/core/Flexer'
+import InfiniteSlider from '@/components/effects/InfiniteSlider'
 import BentoBox from '@/components/shells/BentoShell'
 import React from 'react'
 
