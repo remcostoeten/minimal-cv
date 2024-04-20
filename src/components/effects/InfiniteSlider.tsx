@@ -4,9 +4,9 @@ import { motion } from 'framer-motion';
 import Pill from '../core/Pill';
 import { pills } from '@/core/data/homepage';
 
-const slidesRow1: ReactElement[] = pills.map((pill, index) => <Pill key={index}>{pill}</Pill>);
-const slidesRow2: ReactElement[] = pills.slice().reverse().map((pill, index) => <Pill key={index}>{pill}</Pill>); // Reverse order for the second row
-const slidesRow3: ReactElement[] = pills.map((pill, index) => <Pill key={index}>{pill}</Pill>);
+const slidesRow1: ReactElement[] = pills.map((pill, index) => <Pill hasStar key={index}>{pill}</Pill>);
+const slidesRow2: ReactElement[] = pills.slice().reverse().map((pill, index) => <Pill hasStar key={index}>{pill}</Pill>);
+const slidesRow3: ReactElement[] = pills.map((pill, index) => <Pill hasStar key={index}>{pill}</Pill>);
 
 const InfiniteSlider: React.FC = () => {
     return (

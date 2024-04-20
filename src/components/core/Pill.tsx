@@ -7,9 +7,9 @@ type PillProps = {
 
 export default function Pill({ hasStar, children }: PillProps) {
     return (
-        <div className="flex items-center justify-center flex-nowrap gap-3 h-auto overflow-hidden py-0 px-3 relative w-auto">
+        <div className="flex items-center justify-center flex-nowrap gap-3 h-auto overflow-hidden py-0 px-2  relative w-auto">
             {hasStar && <StarIcon />}
-            <div className="text-[12px]  bg-cardalt   p-[12px] h-[36px] rounded-[12px] flex w-full break-words items-center justify-center ">
+            <div className="text-[16px]  bg-cardalt   p-[12px] h-[36px] rounded-[12px] flex w-full break-words items-center justify-center ">
                 {children}
             </div>
         </div>
@@ -20,8 +20,8 @@ function StarIcon() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="12"
-            height="12"
+            width="16"
+            height="16"
             version="1.1"
             fill="#ac99ff"
             viewBox="0 0 512 512"
