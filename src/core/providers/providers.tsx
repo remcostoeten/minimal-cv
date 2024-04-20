@@ -6,16 +6,12 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "./next-theme";
 
 export default function ProviderWrapper({ children }) {
-  return (
-    <HydrationOverlay>
-      <html lang="en" suppressHydrationWarning>
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          {children}
-        </ThemeProvider>
-        <SpeedInsights />
-        <Analytics />
-        <Toaster />
-      </html>
-    </HydrationOverlay>
-  );
+    return (
+        <HydrationOverlay>
+            {children}
+            <SpeedInsights />
+            <Analytics />
+            <Toaster />
+        </HydrationOverlay >
+    );
 }

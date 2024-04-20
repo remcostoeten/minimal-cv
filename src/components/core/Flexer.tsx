@@ -1,34 +1,34 @@
 import React, { HTMLProps, ReactNode } from "react";
 
 type FlexProps<T extends keyof JSX.IntrinsicElements> = HTMLProps<T> & {
-    dir?: "row" | "row-reverse" | "col" | "col-reverse";
-    justify?: "start" | "end" | "center" | "between" | "around" | "evenly";
-    align?: "start" | "end" | "center" | "stretch" | "baseline";
-    wrap?: "nowrap" | "wrap" | "wrap-reverse";
-    as?: any;
-    gap?: string;
+  dir?: "row" | "row-reverse" | "col" | "col-reverse";
+  justify?: "start" | "end" | "center" | "between" | "around" | "evenly";
+  align?: "start" | "end" | "center" | "stretch" | "baseline";
+  wrap?: "nowrap" | "wrap" | "wrap-reverse";
+  as?: any;
+  gap?: string;
 };
 
-const Flex = <T extends keyof JSX.IntrinsicElements = 'div'>({
-    dir = "row",
-    justify = "start",
-    align = "start",
-    wrap = "nowrap",
-    className = "",
-    children,
-    gap,
-    as = 'div',
-    ...props
+const Flex = <T extends keyof JSX.IntrinsicElements = "div">({
+  dir = "row",
+  justify = "start",
+  align = "start",
+  wrap = "nowrap",
+  className = "",
+  children,
+  gap,
+  as = "div",
+  ...props
 }: FlexProps<T>) => {
-    const Component = as;
-    return (
-        <Component
-            className={`flex ${dir !== "row" ? `flex-${dir}` : ""} justify-${justify} items-${align} ${wrap !== "nowrap" ? `flex-${wrap}` : ""} gap-${gap} ${className}`}
-            {...props}
-        >
-            {children}
-        </Component>
-    );
+  const Component = as;
+  return (
+    <Component
+      className={`flex ${dir !== "row" ? `flex-${dir}` : ""} justify-${justify} items-${align} ${wrap !== "nowrap" ? `flex-${wrap}` : ""} gap-${gap} ${className}`}
+      {...props}
+    >
+      {children}
+    </Component>
+  );
 };
 
 export default Flex;
