@@ -69,3 +69,7 @@
         @apply bg-background text-foreground;
     }
 }
+
+.max-h-260 {
+    max-height: 260px;
+}

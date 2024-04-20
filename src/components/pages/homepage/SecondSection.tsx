@@ -1,15 +1,15 @@
 import Flex from '@/components/core/Flexer'
-import Pill from '@/components/core/Pill'
+import { GlobeDemo } from '@/components/effects/Globe'
 import InfiniteSlider from '@/components/effects/InfiniteSlider'
 import BentoBox from '@/components/shells/BentoShell'
-import React from 'react'
 
 export default function SecondSection() {
     return (
-        <div className='grid grid-cols-2 gap-24 overflow-hidden'>
-            <BentoBox width='full'>
+        <div className='grid grid-cols-2 gap-24     '>
+            <BentoBox maxHeight noPadding width='full'>
                 <div className='flex flex-col gap-4'>
                     <BentoTitle icon={locationIcon()}>Lemmer, the Netherlands</BentoTitle>
+                    <GlobeDemo />
                 </div>
             </BentoBox>
             <BentoBox width='full'>
@@ -18,17 +18,23 @@ export default function SecondSection() {
                     <InfiniteSlider /> {/* Pass fadeOutskirts prop */}
                 </div>
             </BentoBox>
-        </div>
+        </div >
     )
 }
 
+interface BentoTitleProps {
+    children: React.ReactNode;
+    icon: React.ReactNode;
+    padding?: boolean;
+}
 
-const BentoTitle = ({ children, icon }) => {
+const BentoTitle: React.FC<BentoTitleProps> = ({ children, icon, padding = false }) => {
     return (
-        <Flex align='center'>
+        <Flex align='center' className={padding ? 'p-24' : ''}>
             {icon}
             <h3 className='ml-4 text-[18px]'>{children}</h3>
-        </Flex>)
+        </Flex>
+    );
 }
 
 function locationIcon() {

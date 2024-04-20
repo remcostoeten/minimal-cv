@@ -88,6 +88,9 @@ const config = {
                 24: "24px",
                 page: "24px 24px 102px",
             },
+            height: {
+                260: "260px",
+            },
             keyframes: {
                 "accordion-down": {
                     from: { height: "0" },
