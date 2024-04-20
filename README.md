@@ -10,7 +10,7 @@ ui
 data
 - [ ] retrtieve github stats
 - [ ] come up with relevant skills for the bento slider (homepage.ts)
-_____________________
+    _____________________
 
 - [ ] Add Projects Section
   - [ ] List all projects

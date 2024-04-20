@@ -7,7 +7,7 @@ const World = dynamic(() => import("./GlobeConfig").then((m) => m.World), {
     ssr: false,
 });
 
-export function GlobeDemo() {
+export function WorldGlobe() {
     const globeConfig = {
         pointSize: 4,
         globeColor: "#062056",
@@ -21,10 +21,10 @@ export function GlobeDemo() {
         ambientLight: "#38bdf8",
         directionalLeftLight: "#ffffff",
         directionalTopLight: "#ffffff",
-        pointLight: "red",
+        pointLight: "#AC99FF",
         arcTime: 1000,
         arcLength: 0.9,
-        rings: 1,
+        rings: 3,
         maxRings: 3,
         initialPosition: { lat: -53.3193, lng: 6.1694 },
         autoRotate: true,
@@ -80,7 +80,7 @@ export function GlobeDemo() {
     ];
 
     return (
-        <div className="flex flex-row items-center justify-center h-[400px] relative w-full">
+        <div className="flex flex-row items-center justify-center h-[400px] -translate-y-10 w-full z-10">
             <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full ">
                 <motion.div
                     initial={{
@@ -97,7 +97,7 @@ export function GlobeDemo() {
                     className="div"
                 >
                 </motion.div>
-                <div className="absolute w-full -bottom-20 h-72 md:h-96 z-10">
+                <div className=" w-full -bottom-20 h-72 md:h-96 z-10">
                     <World data={sampleArcs} globeConfig={globeConfig} />
                 </div>
             </div>
