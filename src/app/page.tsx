@@ -1,8 +1,8 @@
 "use client";
 import Intro from "@/components/pages/homepage/Intro";
+import ProjectSection from "@/components/pages/homepage/ProjectSection";
 import SecondSection from "@/components/pages/homepage/SecondSection";
 import StackSection from "@/components/pages/homepage/StackSection";
-import ProjectSection from "@/components/pages/homepage/ProjectSection";
 
 export default function page() {
     return (
