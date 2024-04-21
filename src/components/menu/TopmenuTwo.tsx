@@ -8,7 +8,7 @@ import Link from "next/link";
 export default function Header() {
     return (
         <HeaderShell>
-            <Flex justify="between" align="center">
+            <div className="flex justify-between items-center">
                 <Flex>
                     {userImage()}
                     <Flex dir="col" justify="center" gap="small">
@@ -46,7 +46,7 @@ export default function Header() {
                         </Link>
                     </HeaderIcon>
                 </Flex>
-            </Flex>
+            </div>
         </HeaderShell>
     );
 }
