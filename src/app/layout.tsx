@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import "../styles/app.css";
 import ProviderWrapper from "@/core/providers/providers";
 import PageShell from "@/components/shells/PageShell";
+import TopmenuTwo from "@/components/menu/TopmenuTwo";
+import TopMenu from "@/components/menu/TopMenu";
+import TopMenuThree from "@/components/menu/TopMenuThree";
 
 export const metadata: Metadata = {
     title: "Remco Stoeten",
@@ -18,7 +21,9 @@ export default function RootLayout({
             <body className="bg-body">
                 <ProviderWrapper>
                     <PageShell>
-                        {children}
+                        <>
+                            <TopmenuTwo />
+                            {children}</>
                     </PageShell>
                 </ProviderWrapper>
             </body>

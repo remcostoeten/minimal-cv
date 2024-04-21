@@ -73,3 +73,7 @@
 .max-h-260 {
     max-height: 260px;
 }
+
+.gap-small {
+    gap: 2px;
+}
