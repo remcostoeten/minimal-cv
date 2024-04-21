@@ -1,4 +1,3 @@
-import React from "react";
 import BentoBox from "./BentoShell";
 import Paragraph from "../core/Text";
 import Link from "next/link";
@@ -29,8 +28,7 @@ export default function FooterShell() {
             <Link
               className="underline"
               href={siteConfig.links.github}
-              tFflex
-              gap-4arget="_blank"
+              target="_blank"
             >
               Github
             </Link>

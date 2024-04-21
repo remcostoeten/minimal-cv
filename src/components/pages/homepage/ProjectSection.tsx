@@ -1,5 +1,4 @@
 import CTAButton from "@/components/core/Cta";
-import Pill, { ColoredPill } from "@/components/core/Pill";
 import BentoBox from "@/components/shells/BentoShell";
 import BentoTitle from "@/components/shells/BentoTitle";
 import { projectsData } from "@/core/data/projects";
@@ -9,6 +8,7 @@ import { motion } from "framer-motion"; // Import Framer Motion
 import Paragraph from "@/components/core/Text";
 import { MovingBorderButton } from "@/components/core/BorderButton";
 import ColoredLabel from "@/components/core/ColoredLabel";
+import ProjectList from "./ProjectList";
 
 export default function ProjectSection() {
   return (
@@ -55,6 +55,9 @@ export default function ProjectSection() {
             <div className="w-full h-[1px] bg-cardalt" />
           </>
         ))}
+        <div className="flex flex-col">
+          <ProjectList />
+        </div>
 
         <CTAButton hasIcon>More about my projects</CTAButton>
       </div>
@@ -62,11 +65,6 @@ export default function ProjectSection() {
   );
 }
 
-function PillBtn({ children }) {
-  <div className="inline-flex items-center justify-center gap-1 overflow-hidden font-medium transition rounded-full py-1 px-3 bg-emerald-400/10 text-emerald-400 ring-1 ring-inset ring-emerald-400/20 hover:bg-emerald-400/10 hover:text-emerald-300 hover:ring-emerald-300 text-xs md:text-sm">
-    {children}
-  </div>;
-}
 function projectIcon() {
   return (
     <svg
