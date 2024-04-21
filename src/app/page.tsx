@@ -5,12 +5,12 @@ import SecondSection from "@/components/pages/homepage/SecondSection";
 import StackSection from "@/components/pages/homepage/StackSection";
 
 export default function page() {
-    return (
-        <>
-            <Intro />
-            <SecondSection />
-            <StackSection />
-            <ProjectSection />
-        </>
-    );
+  return (
+    <>
+      <Intro />
+      <SecondSection />
+      <StackSection />
+      <ProjectSection />
+    </>
+  );
 }

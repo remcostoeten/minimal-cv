@@ -20,17 +20,21 @@ export default function Header() {
         <Flex>
           <Flex dir="col" justify="center" gap="small">
             <div className="font leading-[1] text-[24px] font-medium  text-pink">
-              Remco Stoeten
+              <span className="flex gap-2">
+                Remco <span className="hidden sm:block">Stoeten</span>
+              </span>
             </div>
             <div className=" text-[14px] font-light  text-neutral-400">
               Front-end engineer
             </div>
           </Flex>
         </Flex>
-        <Pill bg="cardalt" borderColor="green" color="neutral-200">
-          <PulseDot />
-          Available for work
-        </Pill>
+        <span className="hidden sm:block">
+          <Pill bg="cardalt" borderColor="green" color="neutral-200">
+            <PulseDot />
+            Available for work
+          </Pill>
+        </span>
         <Flex gap="2">
           <HeaderIcon>
             <Link href="mailto:remcostoeten@hotmail.com">
