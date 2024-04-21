@@ -77,3 +77,7 @@
 .gap-small {
     gap: 2px;
 }
+
+.border-green {
+    border-color: var(--green);
+}
