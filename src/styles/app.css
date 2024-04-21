@@ -81,3 +81,29 @@
 .border-green {
     border-color: var(--green);
 }
+
+.seperator {
+    align-content: center;
+    align-items: center;
+    align-self: stretch;
+    display: flex;
+    flex: none;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    height: auto;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    width: 68px;
+}
+
+.seperator__inner {
+    background-color: rgb(26, 26, 26);
+    flex: none;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 2px;
+}

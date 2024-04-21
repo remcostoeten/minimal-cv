@@ -10,11 +10,10 @@ export default function Intro() {
         {introduction.title}
       </Heading>
       <Paragraph>
-        I'm a passionate web designer who crafts digital experiences with a
-        perfect blend of creativity and functionality. With an eye for detail
-        and a love for clean, user-friendly designs, I bring websites to life
-        that not only look stunning but also deliver seamless and enjoyable user
-        journeys.
+        I am a recovering ex-Magento developer and currently building open
+        source software at Pleio. Primarily working with TypeScript & Next.js,
+        have done a little Python, Shell & Lua, and want to learn Go, OCaml,
+        and, and and and.... ⌛
       </Paragraph>
       <CTAButton hasIcon>{introduction.button}</CTAButton>
     </BentoBox>

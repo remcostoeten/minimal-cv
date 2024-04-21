@@ -19,7 +19,7 @@ export default function BentoBox({
 }: BentoBoxProps) {
   return (
     <div
-      className={`font flex gap-[24px] flex-col ${noPadding ? "" : "p-24"} shadow-sm rounded-[30px] max-md:px-5 max-md:max-w-full bg-${bg} text-${color} w-${width} ${maxHeight ? "max-h-260" : ""}`}
+      className={`font flex gap-[24px] justify-around flex-col ${noPadding ? "" : "p-24"} shadow-sm rounded-[30px] max-md:px-5 max-md:max-w-full bg-${bg} text-${color} w-${width} ${maxHeight ? "max-h-260" : ""}`}
       {...props}
     >
       {children}

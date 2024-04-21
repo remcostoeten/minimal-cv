@@ -28,6 +28,7 @@ const config = {
         green: "var(--green)",
       },
       colors: {
+        text: "#999",
         green: "var(--green)",
         pink: "var(--pink)",
         white: "var(--white)",
