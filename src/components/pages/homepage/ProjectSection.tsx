@@ -20,15 +20,15 @@ export default function ProjectSection() {
                     Althrough most projects are not done or even abbandoned, they are
                     showworthy.
                 </Paragraph>
-                {projectsData.map((skill) => (
+                {projectsData.map((project) => (
                     <>
                         <div className="flex items-center gap-4">
                             <div className="w-[68px] h-[68px] flex items-center justify-center bg-cardalt rounded-lg">
-                                {skill.icon}
+                                {project.icon}
                             </div>
                             <div className="flex flex-col">
-                                <h2 className="text-[16px]">{skill.name}</h2>
-                                <p className="text-[14px] text-text">{skill.description}</p>
+                                <h2 className="text-[16px]">{project.name}</h2>
+                                <p className="text-[14px] text-text">{project.description}</p>
                             </div>
                         </div>
                         <div className="flex gap-4">
@@ -36,23 +36,24 @@ export default function ProjectSection() {
                                 <div className="seperator__inner" />
                             </div>
                             <div className="text-[16px] text-text font-[300]">
-                                {useReadMore(skill.paragraph)}
+                                {useReadMore(project.paragraph)}
                             </div>
                         </div>
-                        <div className="flex gap-1">
-                            {skill.technologies.map((tech) => (
+                        <div className="flex gap-1 overflow-x-auto whitespace-nowrap">
+                            {project.technologies.map((tech) => (
                                 <Pill>{tech}</Pill>
                             ))}
                         </div>
-                        {skill.link && (
+                        {project.link && (
                             <MovingBorderButton>
-                                <Link target="_blank" href={skill.link}>Source code here</Link>
+                                <Link target="_blank" href={project.link}>Source code here</Link>
                             </MovingBorderButton>
                         )}
                         <div className="w-full h-[1px] bg-cardalt" />
                     </>
                 ))}
-                <CTAButton hasIcon>More about my stack</CTAButton>
+                
+                <CTAButton hasIcon>More about my projects</CTAButton>
             </div>
         </BentoBox>
     );
