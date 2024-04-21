@@ -89,6 +89,7 @@ const config = {
                 small: "2px",
             },
             fontSize: {
+                xxs: "12px",
                 36: "36px",
             },
             padding: {

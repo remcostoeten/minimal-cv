@@ -14,7 +14,7 @@ export default function SecondSection() {
                     <WorldGlobe />
                 </div>
             </BentoBox>
-            <BentoBox width="full">
+            <BentoBox infiniteSliderFade width="full">
                 <div className="flex flex-col gap-4">
                     <BentoTitle icon={SkillIcon()}>Skills</BentoTitle>
                     <InfiniteSlider />

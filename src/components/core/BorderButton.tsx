@@ -7,7 +7,7 @@ export function MovingBorderButton({ children }) {
         <div>
             <Button
                 borderRadius="1.75rem"
-                className="bg-cardalt border-slate-800"
+                className="bg-cardalt hover:bg-cardalt/40 transition-all border-slate-800"
             >
                 {children}
             </Button>

@@ -1,5 +1,5 @@
 import CTAButton from "@/components/core/Cta";
-import Pill from "@/components/core/Pill";
+import Pill, { ColoredPill } from "@/components/core/Pill";
 import BentoBox from "@/components/shells/BentoShell";
 import BentoTitle from "@/components/shells/BentoTitle";
 import { projectsData } from "@/core/data/projects";
@@ -8,6 +8,7 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion"; // Import Framer Motion
 import Paragraph from "@/components/core/Text";
 import { MovingBorderButton } from "@/components/core/BorderButton";
+import ColoredLabel from "@/components/core/ColoredLabel";
 
 export default function ProjectSection() {
     return (
@@ -31,7 +32,7 @@ export default function ProjectSection() {
                                 <p className="text-[14px] text-text">{project.description}</p>
                             </div>
                         </div>
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 pb-4">
                             <div className="seperator">
                                 <div className="seperator__inner" />
                             </div>
@@ -40,10 +41,10 @@ export default function ProjectSection() {
                             </div>
                         </div>
                         <div className="flex gap-1 overflow-x-auto whitespace-nowrap">
-                            {project.technologies.map((tech) => (
-                                <Pill>{tech}</Pill>
-                            ))}
-                        </div>
+    {project.technologies.map((tech) => (
+        <ColoredLabel>{tech}</ColoredLabel>
+    ))}
+</div>
                         {project.link && (
                             <MovingBorderButton>
                                 <Link target="_blank" href={project.link}>Source code here</Link>
@@ -52,13 +53,18 @@ export default function ProjectSection() {
                         <div className="w-full h-[1px] bg-cardalt" />
                     </>
                 ))}
-                
+
                 <CTAButton hasIcon>More about my projects</CTAButton>
             </div>
         </BentoBox>
     );
 }
 
+function PillBtn({ children }) {
+    <div className="inline-flex items-center justify-center gap-1 overflow-hidden font-medium transition rounded-full py-1 px-3 bg-emerald-400/10 text-emerald-400 ring-1 ring-inset ring-emerald-400/20 hover:bg-emerald-400/10 hover:text-emerald-300 hover:ring-emerald-300 text-xs md:text-sm">
+        {children}
+    </div>
+}
 function projectIcon() {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" focusable="false" color="var(--token-82600c9b-73af-46dc-b10d-4e1f7985fe89, rgb(0, 204, 150))" style={{ userSelect: 'none', width: '24', height: '24', display: 'inline-block', fill: 'var(--token-82600c9b-73af-46dc-b10d-4e1f7985fe89, rgb(0, 204, 150))', color: 'var(--token-82600c9b-73af-46dc-b10d-4e1f7985fe89, rgb(0, 204, 150))', flexShrink: 0 }}>
@@ -68,6 +74,7 @@ function projectIcon() {
         </svg>
     );
 }
+
 function useReadMore(text, maxCharacters = 150) {
     const [isExpanded, setIsExpanded] = useState(false);
     const paragraphRef = useRef(null);
@@ -85,12 +92,19 @@ function useReadMore(text, maxCharacters = 150) {
 
     return (
         <div ref={paragraphRef}>
-            <motion.div variants={paragraphVariants} animate={isExpanded ? "expanded" : "collapsed"}>
-                <p className="text-[16px] text-text font-[300]">{text.substring(0, maxCharacters)}{isExpanded ? text : "..."}</p>
+            <motion.div
+                variants={paragraphVariants}
+                initial="collapsed"
+                animate={isExpanded ? "expanded" : "collapsed"}
+                transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+            >
+                <p className="text-[16px] text-text font-[300]">
+                    {isExpanded ? text : text.substring(0, maxCharacters) + "..."}
+                </p>
             </motion.div>
 
-            {!isExpanded && <button onClick={toggleExpand}>Read More</button>}
-            {isExpanded && <button onClick={toggleExpand}>Read Less</button>}
+            {!isExpanded && <button  className='underline' onClick={toggleExpand}>Read More</button>}
+            {isExpanded && <button className='underline'  onClick={toggleExpand}>Read Less</button>}
         </div>
     );
 }

@@ -74,7 +74,6 @@ const InfiniteSlider: React.FC = () => {
                     <motion.div
                         className="flex"
                         animate={{
-                            // Swap the values to make the slide move in the reverse direction
                             x: ["0%", "-90%"],
                             transition: {
                                 ease: "linear",

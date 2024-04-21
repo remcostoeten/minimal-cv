@@ -15,7 +15,7 @@ export default function FooterShell() {
                 </div>
                 <div className='flex flex-col text-right'>
                     <Paragraph><Link className='underline' href={siteConfig.links.snippets} target='_blank'>Snippets</Link></Paragraph>
-                    <Paragraph><Link  className='underline' href={siteConfig.links.github} target='_blank'>Github</Link></Paragraph>
+                    <Paragraph><Link  className='underline' href={siteConfig.links.github} tFflex gap-4arget='_blank'>Github</Link></Paragraph>
                 </div>
             </Flex>
         </BentoBox>

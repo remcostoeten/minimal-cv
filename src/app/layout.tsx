@@ -4,6 +4,7 @@ import ProviderWrapper from "@/core/providers/providers";
 import PageShell from "@/components/shells/PageShell";
 import TopmenuTwo from "@/components/menu/TopmenuTwo";
 import FooterShell from "@/components/shells/FooterShell";
+import SiteInProgressNotification from "@/components/effects/InProgressToast";
 
 export const metadata: Metadata = {
     title: "Remco Stoeten",
@@ -24,6 +25,7 @@ export default function RootLayout({
                             <TopmenuTwo />
                             {children}
                             <FooterShell />
+                        <SiteInProgressNotification/>
                         </>
                     </PageShell>
                 </ProviderWrapper>

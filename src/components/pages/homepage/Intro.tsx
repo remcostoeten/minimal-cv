@@ -6,7 +6,7 @@ import { introduction } from "@/core/data/homepage";
 export default function Intro() {
   return (
     <BentoBox>
-      <Heading as="h2" size="36">
+      <Heading  leading='leading-7' as="h2" size="36">
         {introduction.title}
       </Heading>
       <Paragraph>

@@ -6,6 +6,7 @@ type HeadingProps = {
   color?: "text-neutral-200" | "text-neutral-300" | "text-neutral-400" | string;
   maxWidth?: "max-w-full" | "max-w-md" | "max-w-lg" | "max-w-xl" | string;
   children: React.ReactNode;
+  leading: string;
 };
 
 export default function Heading({
@@ -14,12 +15,13 @@ export default function Heading({
   size = "36",
   color = "text-neutral-200",
   maxWidth,
+  leading,
   ...props
 }: HeadingProps) {
   const Component = as;
 
   return (
-    <Component className={`text-${size} ${color} ${maxWidth}`} {...props}>
+    <Component className={`text-${size} ${color} ${maxWidth} ${leading} `} {...props}>
       {children}
     </Component>
   );

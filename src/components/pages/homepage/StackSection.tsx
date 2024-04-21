@@ -10,8 +10,7 @@ export default function StackSection() {
             <BentoTitle icon={skillIcon()}>Techstack</BentoTitle>
             <div className="flex flex-col gap-2">
                 <Paragraph spacing="4">
-                    I started off working with Magento 2 (php) and luckily I was able to get out of that and switched over to more modern stack. At my job I primairly work with React, GraphQL and a Django backend. In my free time I built apps with NextJS and TypeScript but I also like to experiment with other technologies, wether it's Python, Lua, Solid.JS or Svelte. As long it's not Magento  .
-                </Paragraph>
+                I transitioned from Magento 2 (PHP) to a modern stack. Now, I primarily use React, GraphQL, and Django at work. In my free time, I build apps with NextJS and TypeScript, and experiment with Python, Lua, Solid.JS, and Svelte.                </Paragraph>
                 {skillsData.map((skill) => (
                     <>
                         <div className="flex items-center gap-4">
@@ -23,7 +22,7 @@ export default function StackSection() {
                                 <p className="text-[14px] text-text">{skill.description}</p>
                             </div>
                         </div>
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 pb-4">
                             <div className="seperator">
                                 <div className="seperator__inner" />
                             </div>
