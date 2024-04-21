@@ -7,29 +7,29 @@ import FooterShell from "@/components/shells/FooterShell";
 import SiteInProgressNotification from "@/components/effects/InProgressToast";
 
 export const metadata: Metadata = {
-    title: "Remco Stoeten",
-    description: "Minimal landing page",
+  title: "Remco Stoeten",
+  description: "Minimal landing page",
 };
 
 export default function RootLayout({
-    children,
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-    return (
-        <html lang="en" suppressHydrationWarning>
-            <body className="bg-body">
-                <ProviderWrapper>
-                    <PageShell>
-                        <>
-                            <TopmenuTwo />
-                            {children}
-                            <FooterShell />
-                        <SiteInProgressNotification/>
-                        </>
-                    </PageShell>
-                </ProviderWrapper>
-            </body>
-        </html>
-    );
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-body">
+        <ProviderWrapper>
+          <PageShell>
+            <>
+              <TopmenuTwo />
+              {children}
+              <FooterShell />
+              <SiteInProgressNotification />
+            </>
+          </PageShell>
+        </ProviderWrapper>
+      </body>
+    </html>
+  );
 }

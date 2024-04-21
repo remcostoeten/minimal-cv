@@ -20,7 +20,9 @@ export default function Header() {
         <Flex>
           <Flex dir="col" justify="center" gap="small">
             <div className="font leading-[1] text-[24px] font-medium  text-pink">
-              <span className="flex gap-2">Remco <span className="hidden sm:block">Stoeten</span></span>
+              <span className="flex gap-2">
+                Remco <span className="hidden sm:block">Stoeten</span>
+              </span>
             </div>
             <div className=" text-[14px] font-light  text-neutral-400">
               Front-end engineer
@@ -28,7 +30,7 @@ export default function Header() {
           </Flex>
         </Flex>
         <span className="hidden sm:block">
-          <Pill  bg="cardalt" borderColor="green" color="neutral-200">
+          <Pill bg="cardalt" borderColor="green" color="neutral-200">
             <PulseDot />
             Available for work
           </Pill>

@@ -21,7 +21,10 @@ export default function Heading({
   const Component = as;
 
   return (
-    <Component className={`text-${size} ${color} ${maxWidth} ${leading} `} {...props}>
+    <Component
+      className={`text-${size} ${color} ${maxWidth} ${leading} `}
+      {...props}
+    >
       {children}
     </Component>
   );

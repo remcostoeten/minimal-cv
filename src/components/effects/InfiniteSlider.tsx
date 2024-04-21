@@ -5,120 +5,119 @@ import Pill from "../core/Pill";
 import { pills } from "@/core/data/homepage";
 
 function shuffleArray(array: any[]) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
 const InfiniteSlider: React.FC = () => {
-    const [randomizedPills1, setRandomizedPills1] = useState(pills);
-    const [randomizedPills2, setRandomizedPills2] = useState(pills);
-    const [randomizedPills3, setRandomizedPills3] = useState(pills);
+  const [randomizedPills1, setRandomizedPills1] = useState(pills);
+  const [randomizedPills2, setRandomizedPills2] = useState(pills);
+  const [randomizedPills3, setRandomizedPills3] = useState(pills);
 
-    useEffect(() => {
-        setRandomizedPills1(shuffleArray([...pills]));
-        setRandomizedPills2(shuffleArray([...pills]));
-        setRandomizedPills3(shuffleArray([...pills]));
-    }, []);
+  useEffect(() => {
+    setRandomizedPills1(shuffleArray([...pills]));
+    setRandomizedPills2(shuffleArray([...pills]));
+    setRandomizedPills3(shuffleArray([...pills]));
+  }, []);
 
-    const slidesRow1: ReactElement[] = randomizedPills1.map((pill, index) => (
-        <Pill hasStar key={index}>
-            {pill}
-        </Pill>
+  const slidesRow1: ReactElement[] = randomizedPills1.map((pill, index) => (
+    <Pill hasStar key={index}>
+      {pill}
+    </Pill>
+  ));
+  const slidesRow2: ReactElement[] = randomizedPills2
+    .slice()
+    .reverse()
+    .map((pill, index) => (
+      <Pill hasStar key={index}>
+        {pill}
+      </Pill>
     ));
-    const slidesRow2: ReactElement[] = randomizedPills2
-        .slice()
-        .reverse()
-        .map((pill, index) => (
-            <Pill hasStar key={index}>
-                {pill}
-            </Pill>
-        ));
-    const slidesRow3: ReactElement[] = randomizedPills3.map((pill, index) => (
-        <Pill hasStar key={index}>
-            {pill}
-        </Pill>
-    ));
+  const slidesRow3: ReactElement[] = randomizedPills3.map((pill, index) => (
+    <Pill hasStar key={index}>
+      {pill}
+    </Pill>
+  ));
 
-
-    return (
-        <div className="relative w-max overflow-hidden infinite-slider-fade">
-            <div className="flex w-full">
-                <div className="flex-shrink-0" style={{ overflowX: "auto" }}>
-                    <motion.div
-                        className="flex"
-                        animate={{
-                            x: ["-65%", "0%"],
-                            transition: {
-                                ease: "linear",
-                                duration: 80,
-                                repeat: Infinity,
-                            },
-                        }}
-                    >
-                        {slidesRow1.map((slide, index) => (
-                            <div
-                                key={index}
-                                className="flex items-center justify-center h-full text-6xl"
-                            >
-                                {slide}
-                            </div>
-                        ))}
-                    </motion.div>
-                </div>
-            </div>
-            <div className="flex w-full mt-4">
-                <div className="flex-shrink-0" style={{ overflowX: "auto" }}>
-                    <motion.div
-                        className="flex"
-                        animate={{
-                            x: ["0%", "-90%"],
-                            transition: {
-                                ease: "linear",
-                                duration: 80,
-                                repeat: Infinity,
-                            },
-                        }}
-                    >
-                        {slidesRow2.map((slide, index) => (
-                            <div
-                                key={index}
-                                className="flex items-center justify-center h-full text-6xl"
-                            >
-                                {slide}
-                            </div>
-                        ))}
-                    </motion.div>
-                </div>
-            </div>
-            <div className="flex w-full mt-4">
-                <div className="flex-shrink-0" style={{ overflowX: "auto" }}>
-                    <motion.div
-                        className="flex"
-                        animate={{
-                            x: ["-80%", "0%"],
-                            transition: {
-                                ease: "linear",
-                                duration: 85,
-                                repeat: Infinity,
-                            },
-                        }}
-                    >
-                        {slidesRow3.map((slide, index) => (
-                            <div
-                                key={index}
-                                className="flex items-center justify-center h-full text-6xl"
-                            >
-                                {slide}
-                            </div>
-                        ))}
-                    </motion.div>
-                </div>
-            </div>
+  return (
+    <div className="relative w-max overflow-hidden infinite-slider-fade">
+      <div className="flex w-full">
+        <div className="flex-shrink-0" style={{ overflowX: "auto" }}>
+          <motion.div
+            className="flex"
+            animate={{
+              x: ["-65%", "0%"],
+              transition: {
+                ease: "linear",
+                duration: 80,
+                repeat: Infinity,
+              },
+            }}
+          >
+            {slidesRow1.map((slide, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center h-full text-6xl"
+              >
+                {slide}
+              </div>
+            ))}
+          </motion.div>
         </div>
-    );
+      </div>
+      <div className="flex w-full mt-4">
+        <div className="flex-shrink-0" style={{ overflowX: "auto" }}>
+          <motion.div
+            className="flex"
+            animate={{
+              x: ["0%", "-90%"],
+              transition: {
+                ease: "linear",
+                duration: 80,
+                repeat: Infinity,
+              },
+            }}
+          >
+            {slidesRow2.map((slide, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center h-full text-6xl"
+              >
+                {slide}
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+      <div className="flex w-full mt-4">
+        <div className="flex-shrink-0" style={{ overflowX: "auto" }}>
+          <motion.div
+            className="flex"
+            animate={{
+              x: ["-80%", "0%"],
+              transition: {
+                ease: "linear",
+                duration: 85,
+                repeat: Infinity,
+              },
+            }}
+          >
+            {slidesRow3.map((slide, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center h-full text-6xl"
+              >
+                {slide}
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default InfiniteSlider;
