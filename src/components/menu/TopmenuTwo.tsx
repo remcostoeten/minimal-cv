@@ -1,5 +1,6 @@
 import Flex from "../core/Flexer";
-import Pill from "../core/Pill";
+import Pill, { PulseDot } from "../core/Pill";
+import BentoBox from "../shells/BentoShell";
 import HeaderShell from "./HeaderShell";
 
 export default function Header() {
@@ -59,7 +60,8 @@ export default function Header() {
             Front-end engineer
           </div>
         </Flex>
-        <Pill bg="cardalt" borderColor="green" color="white" hasDot>
+        <Pill bg="cardalt" borderColor="green" color="neutral-200">
+          <PulseDot />
           Available for work
         </Pill>
       </div>

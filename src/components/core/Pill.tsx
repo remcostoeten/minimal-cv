@@ -3,7 +3,6 @@ import React from "react";
 type PillProps = {
   children: React.ReactNode;
   hasStar?: boolean;
-  hasDot?: boolean;
   bg?: string;
   color?: string;
   text?: string;
@@ -11,7 +10,6 @@ type PillProps = {
 };
 
 export default function Pill({
-  hasDot,
   hasStar,
   children,
   bg = "cardalt",
@@ -22,7 +20,6 @@ export default function Pill({
   return (
     <div className="flex items-center justify-center flex-nowrap gap-3 h-auto overflow-hidden py-0 px-2  relative w-auto">
       {hasStar && <StarIcon />}
-      {hasDot && <PulseDot />}
       <div
         className={`text-[${text}] bg-${bg} text-${color} ${borderColor !== "transparent" ? "border" : ""} border-${borderColor} gap-2 p-[12px] h-[36px] rounded-[12px]  flex w-full break-words items-center justify-center `}
       >
