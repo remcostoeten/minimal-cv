@@ -78,8 +78,13 @@ const config = {
       spaceY: {
         24: "24px",
       },
+      borderColor: {
+        green: "var(--green)",
+        pink: "var(--pink)",
+      },
       gap: {
         24: "24px",
+        small: "2px",
       },
       fontSize: {
         36: "36px",

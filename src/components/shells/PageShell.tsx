@@ -7,7 +7,7 @@ const PageShell = ({ children }) => {
             wrap="nowrap"
             dir="col"
             justify="start"
-            className="min-h-screen gap-24 p-page md:w-page relative mx-auto "
+            className="min-h-screen gap-24 py-24  md:w-page relative mx-auto "
         >
             {children}
         </Flex>
@@ -15,7 +15,9 @@ const PageShell = ({ children }) => {
 };
 
 const Container = ({ children }) => {
-    return <div className="md:w-page flex justify-center mx-auto">{children}</div>;
+    return (
+        <div className="md:w-page flex justify-center mx-auto">{children}</div>
+    );
 };
 
 export default PageShell;
