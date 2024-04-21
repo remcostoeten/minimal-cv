@@ -18,7 +18,7 @@ export default function CTAButton({
   return href ? (
     <Link
       href={href}
-      className={`cta-button flex flex-row items-center justify-center gap-1.5 h-[42px] px-6 text-pink bg-cardalt rounded-lg shadow-md cursor-pointer overflow-hidden relative`}
+      className={`cta-button flex flex-row items-center justify-center gap-1.5 h-[42px] px-6 text-pink hover:bg-cardalt/40 transition-all bg-cardalt rounded-lg shadow-md cursor-pointer overflow-hidden relative`}
       {...props}
     >
       {children}
@@ -26,7 +26,7 @@ export default function CTAButton({
     </Link>
   ) : (
     <button
-      className={`cta-button flex flex-row items-center justify-center gap-1.5 h-[42px] px-6 text-[14px] text-pink bg-${bgColor} rounded-lg shadow-md  cursor-pointer overflow-hidden relative`}
+      className={`cta-button flex flex-row items-center justify-center gap-1.5 h-[42px] hover:bg-cardalt/10 transition-all  px-6 text-[14px] text-pink bg-${bgColor} rounded-lg shadow-md  cursor-pointer overflow-hidden relative`}
       {...props}
     >
       {children}
