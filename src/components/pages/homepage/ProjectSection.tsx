@@ -9,6 +9,7 @@ import Paragraph from "@/components/core/Text";
 import { MovingBorderButton } from "@/components/core/BorderButton";
 import ColoredLabel from "@/components/core/ColoredLabel";
 import ProjectList from "./ProjectList";
+import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
 
 export default function ProjectSection() {
   return (
@@ -42,6 +43,9 @@ export default function ProjectSection() {
             </div>
             <div className="flex gap-1 overflow-x-auto whitespace-nowrap">
               {project.technologies.map((tech) => (
+
+
+
                 <ColoredLabel>{tech}</ColoredLabel>
               ))}
             </div>

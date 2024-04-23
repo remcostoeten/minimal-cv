@@ -3,6 +3,7 @@ import React, { ReactElement, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Pill from "../core/Pill";
 import { pills } from "@/core/data/homepage";
+import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
 
 function shuffleArray(array: any[]) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -43,7 +44,20 @@ const InfiniteSlider: React.FC = () => {
   ));
 
   return (
-    <div className="relative w-max overflow-hidden infinite-slider-fade">
+    <motion.div
+    initial={{ opacity: 0,scale: 0.8 }}
+    whileInView={{
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: .9,
+        delay: 1,
+        ease: BEZIER_CURVES.BEZIERWTO,
+      },
+    }}
+    viewport={{ once: true }}
+
+    className="relative w-max overflow-hidden infinite-slider-fade">
       <div className="flex w-full">
         <div className="flex-shrink-0" style={{ overflowX: "auto" }}>
           <motion.div
@@ -116,7 +130,7 @@ const InfiniteSlider: React.FC = () => {
           </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
