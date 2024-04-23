@@ -1,7 +1,8 @@
 "use client";
 
 import Paragraph from "@/components/core/Text";
-import { m } from "framer-motion";
+import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
+import { m, motion } from "framer-motion";
 import Link from "next/link";
 
 export default function ProjectList() {
@@ -44,7 +45,13 @@ export default function ProjectList() {
       <Paragraph>And loads more...</Paragraph>
       <ul>
         {articles.map((article, index) => (
-          <m.li className="group" key={index}>
+          <motion.li className="group" key={index}
+          initial={{ opacity: 0, y: -20, x: -40, scale: .8 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1, x:0, transition: { duration:.9, ease: BEZIER_CURVES.BEZIERWTO, delay: .3 } }}
+          viewport={{ once: true }}
+
+
+          >
             <Link
               target="_blank"
               className="flex px-2 py-4 justify-between items-center text-[#d6d3d1] hover:text-white border-[#57534e] hover:border-white group-hover:translate-x-1 transition-transform transition-colors ease-bezier"
@@ -54,7 +61,7 @@ export default function ProjectList() {
               <IconAngleupright className="opacity-0 group-hover:opacity-100 transition-opacity" />
             </Link>
             <hr className="border-[#57534e] hover:border-white transition-colors ease-bezier" />
-          </m.li>
+          </motion.li>
         ))}
       </ul>
       <div className="my-4">

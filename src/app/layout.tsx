@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "../styles/app.css";
 import ProviderWrapper from "@/core/providers/providers";
 import PageShell from "@/components/shells/PageShell";
-import TopmenuTwo from "@/components/menu/TopmenuTwo";
+import Header from "@/components/menu/Header";
 import FooterShell from "@/components/shells/FooterShell";
 import SiteInProgressNotification from "@/components/effects/InProgressToast";
 
@@ -22,7 +22,7 @@ export default function RootLayout({
         <ProviderWrapper>
           <PageShell>
             <>
-              <TopmenuTwo />
+              <Header />
               {children}
               <FooterShell />
               <SiteInProgressNotification />

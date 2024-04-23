@@ -1,7 +1,7 @@
 'use client';
 import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
 import { ReactNode } from "react";
-import MotionWrapper, { MotionWrapperProps } from "../effects/motion-element";
+import { MotionWrapperProps } from "../effects/motion-element";
 import { motion } from "framer-motion";
 
 interface BentoBoxProps extends MotionWrapperProps {
@@ -26,8 +26,8 @@ export default function BentoBox({
 }: BentoBoxProps) {
   return (
     <motion.div
-      initial={{ opacity: 0, y: -20, scale: .8 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1, transition: { duration:.9, ease: BEZIER_CURVES.BEZIERONE } }}
+    initial={{ opacity: 0, y: -20, scale: .8 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1, transition: { duration:.9, ease: BEZIER_CURVES.BEZIERONE, delay: .3 } }}
       viewport={{ once: true }}
     className={`font flex gap-[24px] justify-around flex-col ${noPadding ? "" : "p-24"} shadow-sm rounded-[30px] max-md:px-5 max-md:max-w-full bg-${bg} text-${color} w-${width} ${maxHeight ? "max-h-260" : ""} ${infiniteSliderFade ? "infinite-slider-fade" : ""}`}
       {...props}
