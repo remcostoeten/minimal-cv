@@ -45,19 +45,19 @@ const InfiniteSlider: React.FC = () => {
 
   return (
     <motion.div
-    initial={{ opacity: 0,scale: 0.8 }}
-    whileInView={{
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: .9,
-        delay: 1,
-        ease: BEZIER_CURVES.BEZIERWTO,
-      },
-    }}
-    viewport={{ once: true }}
-
-    className="relative w-max overflow-hidden infinite-slider-fade">
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{
+        opacity: 1,
+        scale: 1,
+        transition: {
+          duration: 0.9,
+          delay: 1,
+          ease: BEZIER_CURVES.BEZIERWTO,
+        },
+      }}
+      viewport={{ once: true }}
+      className="relative w-max overflow-hidden infinite-slider-fade"
+    >
       <div className="flex w-full">
         <div className="flex-shrink-0" style={{ overflowX: "auto" }}>
           <motion.div

@@ -36,7 +36,9 @@ export default function StackSection() {
             </div>
           </>
         ))}
-        <CTAButton hasIcon>More about my stack</CTAButton>
+        <CTAButton href="/my-stack" hasIcon>
+          More about my stack
+        </CTAButton>
       </div>
     </BentoBox>
   );
