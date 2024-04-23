@@ -2,7 +2,7 @@
 
 import Paragraph from "@/components/core/Text";
 import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
-import { m, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function ProjectList() {
@@ -21,12 +21,16 @@ export default function ProjectList() {
         "https://www.npmjs.com/package/@remcostoeten/visualize-component-debugger",
     },
     {
+      title: "Old very cool portoflio design",
+      anchor: "https://portfolio.remcostoeten.com/",
+    },
+    {
       title: "Visual studio code UI recreated in React",
       anchor: "https://vsc.remcostoeten.com/",
     },
     {
       title: "Bezier curve CSS showcase (buggy)",
-      anchor: "cubic-bezier(0.47, 0, 0.745, 0.715)",
+      anchor: "https://animations.remcostoeten.com/",
     },
     {
       title: "SVG to react component converter",
@@ -45,12 +49,22 @@ export default function ProjectList() {
       <Paragraph>And loads more...</Paragraph>
       <ul>
         {articles.map((article, index) => (
-          <motion.li className="group" key={index}
-          initial={{ opacity: 0, y: -20, x: -40, scale: .8 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1, x:0, transition: { duration:.9, ease: BEZIER_CURVES.BEZIERWTO, delay: .3 } }}
-          viewport={{ once: true }}
-
-
+          <motion.li
+            className="group"
+            key={index}
+            initial={{ opacity: 0, y: -20, x: -40, scale: 0.8 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              x: 0,
+              transition: {
+                duration: 0.9,
+                ease: BEZIER_CURVES.BEZIERWTO,
+                delay: 0.3,
+              },
+            }}
+            viewport={{ once: true }}
           >
             <Link
               target="_blank"
