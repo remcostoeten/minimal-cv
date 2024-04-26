@@ -43,9 +43,6 @@ export default function ProjectSection() {
             </div>
             <div className="flex gap-1 overflow-x-auto whitespace-nowrap">
               {project.technologies.map((tech) => (
-
-
-
                 <ColoredLabel>{tech}</ColoredLabel>
               ))}
             </div>
