@@ -1,3 +1,4 @@
+// Globe.tsx
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
@@ -14,8 +15,8 @@ export function WorldGlobe() {
     pointSize: 9,
     globeColor: themeColors.grey,
     showAtmosphere: true,
-    atmosphereColor: themeColors.pink, // the gausian-ish blurred ring around the globe
-    atmosphereAltitude: 0.09, //  gauasian ring strength.
+    atmosphereColor: themeColors.pink,
+    atmosphereAltitude: 0.09,
     emissive: themeColors.grey,
     emissiveIntensity: 0.1,
     shininess: 0.2,
@@ -27,7 +28,7 @@ export function WorldGlobe() {
     arcTime: 2500,
     arcLength: 1,
     rings: 1,
-    initialPos1tion: { lat: -26.2041, lng: 28.0473 },
+    initialPosition: { lat: -26.2041, lng: 28.0473 },
     autoRotate: true,
     autoRotateSpeed: 0.1,
   };

@@ -19,7 +19,6 @@ export default function Heading({
   ...props
 }: HeadingProps) {
   const Component = as;
-
   return (
     <Component
       className={`text-${size} ${color} ${maxWidth} ${leading} `}
