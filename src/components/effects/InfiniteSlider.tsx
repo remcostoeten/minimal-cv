@@ -1,6 +1,6 @@
 "use client";
 import React, { ReactElement, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Pill from "../core/Pill";
 import { pills } from "@/core/data/homepage";
 import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
@@ -44,7 +44,7 @@ const InfiniteSlider: React.FC = () => {
   ));
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, scale: 0.8 }}
       whileInView={{
         opacity: 1,
@@ -60,7 +60,7 @@ const InfiniteSlider: React.FC = () => {
     >
       <div className="flex w-full">
         <div className="flex-shrink-0" style={{ overflowX: "auto" }}>
-          <motion.div
+          <m.div
             className="flex"
             animate={{
               x: ["-65%", "0%"],
@@ -79,12 +79,12 @@ const InfiniteSlider: React.FC = () => {
                 {slide}
               </div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </div>
       <div className="flex w-full mt-4">
         <div className="flex-shrink-0" style={{ overflowX: "auto" }}>
-          <motion.div
+          <m.div
             className="flex"
             animate={{
               x: ["0%", "-90%"],
@@ -103,12 +103,12 @@ const InfiniteSlider: React.FC = () => {
                 {slide}
               </div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </div>
       <div className="flex w-full mt-4">
         <div className="flex-shrink-0" style={{ overflowX: "auto" }}>
-          <motion.div
+          <m.div
             className="flex"
             animate={{
               x: ["-80%", "0%"],
@@ -127,10 +127,10 @@ const InfiniteSlider: React.FC = () => {
                 {slide}
               </div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 

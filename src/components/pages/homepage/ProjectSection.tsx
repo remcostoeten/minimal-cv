@@ -3,13 +3,12 @@ import BentoBox from "@/components/shells/BentoShell";
 import BentoTitle from "@/components/shells/BentoTitle";
 import { projectsData } from "@/core/data/projects";
 import Link from "next/link";
-import { useState, useRef } from "react";
-import { motion } from "framer-motion"; // Import Framer Motion
-import Paragraph from "@/components/core/Text";
+import React, { useState, useRef } from "react";
+import { m } from "framer-motion";
 import { MovingBorderButton } from "@/components/core/BorderButton";
 import ColoredLabel from "@/components/core/ColoredLabel";
+import Paragraph from "@/components/core/Text";
 import ProjectList from "./ProjectList";
-import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
 
 export default function ProjectSection() {
   return (
@@ -108,7 +107,7 @@ function useReadMore(text, maxCharacters = 150) {
 
   return (
     <div ref={paragraphRef}>
-      <motion.div
+      <m.div
         variants={paragraphVariants}
         initial="collapsed"
         animate={isExpanded ? "expanded" : "collapsed"}
@@ -117,7 +116,7 @@ function useReadMore(text, maxCharacters = 150) {
         <p className="text-[16px] text-text font-[300]">
           {isExpanded ? text : text.substring(0, maxCharacters) + "..."}
         </p>
-      </motion.div>
+      </m.div>
 
       {!isExpanded && (
         <button className="underline" onClick={toggleExpand}>

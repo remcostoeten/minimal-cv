@@ -2,7 +2,7 @@
 import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
 import { ReactNode } from "react";
 import { MotionWrapperProps } from "../effects/motion-element";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 interface BentoBoxProps extends MotionWrapperProps {
   children: ReactNode;
@@ -25,7 +25,7 @@ export default function BentoBox({
   ...props
 }: BentoBoxProps) {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: -20, scale: 0.8 }}
       whileInView={{
         opacity: 1,
@@ -42,6 +42,6 @@ export default function BentoBox({
       {...props}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
