@@ -2,6 +2,9 @@ const {
   withHydrationOverlay,
 } = require("@builder.io/react-hydration-overlay/next");
 const million = require("million/compiler");
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -32,7 +35,7 @@ if (process.env.NODE_ENV === "development") {
      * for Next.js apps with pages directory. If you are using the app directory, you should change this to `main`.
      */
     appRootSelector: "main",
-  })(nextConfig);
+  })(withBundleAnalyzer(nextConfig));
 } else {
-  module.exports = million.next(nextConfig, millionConfig);
+  module.exports = million.next(withBundleAnalyzer(nextConfig), millionConfig);
 }
