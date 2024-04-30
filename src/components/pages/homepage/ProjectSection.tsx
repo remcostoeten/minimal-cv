@@ -4,7 +4,7 @@ import BentoTitle from "@/components/shells/BentoTitle";
 import { projectsData } from "@/core/data/projects";
 import Link from "next/link";
 import React, { useState, useRef } from "react";
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import { MovingBorderButton } from "@/components/core/BorderButton";
 import ColoredLabel from "@/components/core/ColoredLabel";
 import Paragraph from "@/components/core/Text";
@@ -17,9 +17,9 @@ export default function ProjectSection() {
       <div className="flex flex-col gap-2">
         <Paragraph spacing="4">
           As any hobby developer I tend to start a lot of projects but never
-          finish them. This site for instance, is probably the 10th itteration.
-          Althrough most projects are not done or even abbandoned, they are
-          showworthy.
+          finish themotion. This site for instance, is probably the 10th
+          itteration. Althrough most projects are not done or even abbandoned,
+          they are showworthy.
         </Paragraph>
         {projectsData.map((project) => (
           <>
@@ -107,7 +107,7 @@ function useReadMore(text, maxCharacters = 150) {
 
   return (
     <div ref={paragraphRef}>
-      <m.div
+      <motion.div
         variants={paragraphVariants}
         initial="collapsed"
         animate={isExpanded ? "expanded" : "collapsed"}
@@ -116,7 +116,7 @@ function useReadMore(text, maxCharacters = 150) {
         <p className="text-[16px] text-text font-[300]">
           {isExpanded ? text : text.substring(0, maxCharacters) + "..."}
         </p>
-      </m.div>
+      </motion.div>
 
       {!isExpanded && (
         <button className="underline" onClick={toggleExpand}>

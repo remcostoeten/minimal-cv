@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
-import { m } from "framer-motion";
 import dynamic from "next/dynamic";
 import { themeColors } from "@/core/constants/colors";
 import { sampleArcs } from "@/core/data/homepage";
+import { Suspense } from "react";
+import { motion } from "framer-motion";
 
 const World = dynamic(() => import("./GlobeConfig").then((m) => m.World), {
   ssr: false,
@@ -34,8 +34,8 @@ export function WorldGlobe() {
 
   return (
     <div className="flex flex-row items-center justify-center h-[400px] -translate-y-10 w-full z-10">
-      <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full ">
-        <m.div
+
+        <motion.div
           initial={{
             opacity: 0,
             y: 20,
@@ -48,11 +48,12 @@ export function WorldGlobe() {
             duration: 1,
           }}
           className="div"
-        ></m.div>
+        ></motion.div>
         <div className=" w-full -bottom-20 h-72 md:h-96 z-10">
-          <World data={sampleArcs} globeConfig={globeConfig} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <World data={sampleArcs} globeConfig={globeConfig} />
+          </Suspense>
         </div>
-      </div>
     </div>
   );
 }

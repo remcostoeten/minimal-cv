@@ -2,7 +2,7 @@
 
 import Paragraph from "@/components/core/Text";
 import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function ProjectList() {
@@ -49,7 +49,7 @@ export default function ProjectList() {
       <Paragraph>And loads more...</Paragraph>
       <ul>
         {articles.map((article, index) => (
-          <m.li
+          <motion.li
             className="group"
             key={index}
             initial={{ opacity: 0, y: -20, x: -40, scale: 0.8 }}
@@ -75,7 +75,7 @@ export default function ProjectList() {
               <IconAngleupright className="opacity-0 group-hover:opacity-100 transition-opacity" />
             </Link>
             <hr className="border-[#57534e] hover:border-white transition-colors ease-bezier" />
-          </m.li>
+          </motion.li>
         ))}
       </ul>
       <div className="my-4">

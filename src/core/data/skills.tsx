@@ -41,7 +41,7 @@ export const skillsData = [
     description: "The language of the web",
     icon: javascriptIcon(),
     paragraph:
-      "I started off my career writing good old jQuery. Later on, a little KnockoutJS got added, which I still despise 🤒. Nowadays, for private projects, I exclusively write TypeScript except for some handy utility Node scripts. At work, we still have our codebase in JS, so there I write JSX. I've done a little Vue and Svelte, and I'm down for all variants as long as it's in the ecosystem. I love exploring.",
+      "I started off my career writing good old jQuery. Later on, a little KnockoutJS got added, which I still despise 🤒. Nowadays, for private projects, I exclusively write TypeScript except for some handy utility Node scripts. At work, we still have our codebase in JS, so there I write JSX. I've done a little Vue and Svelte, and I'm down for all variants as long as it's in the ecosystemotion. I love exploring.",
   },
   {
     name: "Visual Studio Code",

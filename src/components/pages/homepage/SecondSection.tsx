@@ -1,8 +1,11 @@
+import React, { Suspense } from 'react';
 import { SkillIcon, locationIcon } from "@/components/core/icons";
-import { WorldGlobe } from "@/components/effects/Globe";
 import InfiniteSlider from "@/components/effects/InfiniteSlider";
 import BentoBox from "@/components/shells/BentoShell";
 import BentoTitle from "@/components/shells/BentoTitle";
+
+const WorldGlobe = React.lazy(() => import("@/components/effects/Globe").then(module => ({ default: module.WorldGlobe })));
+
 export default function SecondSection() {
   return (
     <div className="grid md:grid-cols-2 grid-cols-1 gap-24 overflow-hidden">
@@ -11,7 +14,9 @@ export default function SecondSection() {
           <BentoTitle padding icon={locationIcon()}>
             Lemmer, the Netherlands
           </BentoTitle>
-          <WorldGlobe />
+          <Suspense fallback={<div>Loading...</div>}>
+            <WorldGlobe />
+          </Suspense>
         </div>
       </BentoBox>
       <BentoBox infiniteSliderFade width="full">

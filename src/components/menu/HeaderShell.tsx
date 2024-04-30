@@ -1,7 +1,7 @@
 "use client";
 import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
 import { ReactNode } from "react";
-import { m } from "framer-motion";
+import { motion } from "framer-motion";
 
 type HeaderShellProps = {
   children: ReactNode;
@@ -9,7 +9,7 @@ type HeaderShellProps = {
 
 export default function HeaderShell({ children, ...props }: HeaderShellProps) {
   return (
-    <m.header
+    <motion.header
       initial={{ opacity: 0, y: -20, scale: 0.8 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       whileInView={{
@@ -23,6 +23,6 @@ export default function HeaderShell({ children, ...props }: HeaderShellProps) {
       {...props}
     >
       {children}
-    </m.header>
+    </motion.header>
   );
 }

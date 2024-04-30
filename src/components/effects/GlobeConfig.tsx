@@ -1,10 +1,11 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Color, Scene, Fog, PerspectiveCamera, Vector3 } from "three";
 import ThreeGlobe from "three-globe";
 import { useThree, Object3DNode, Canvas, extend } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import countries from "@/core/data/globe.json";
+import { useMemo } from "react";
 declare module "@react-three/fiber" {
   interface ThreeElements {
     threeGlobe: Object3DNode<ThreeGlobe, typeof ThreeGlobe>;
@@ -14,7 +15,7 @@ declare module "@react-three/fiber" {
 extend({ ThreeGlobe });
 
 const RING_PROPAGATION_SPEED = 3;
-const aspect = 1.2;
+const aspect = 1.5;
 const cameraZ = 300;
 
 type Position = {
@@ -59,8 +60,20 @@ interface WorldProps {
 }
 
 let numbersOfRings = [0];
-
 export function Globe({ globeConfig, data }: WorldProps) {
+  const initialState = useMemo(
+    () => [
+      {
+        size: 1,
+        order: 1,
+        color: (t: number) => `rgba(255, 255, 255, ${t})`,
+        lat: -26.2041, // Johannesburg, South Africa
+        lng: 28.0473,
+      },
+    ],
+    [],
+  );
+
   const [globeData, setGlobeData] = useState<
     | {
         size: number;
@@ -70,15 +83,8 @@ export function Globe({ globeConfig, data }: WorldProps) {
         lng: number;
       }[]
     | null
-  >([
-    {
-      size: 1,
-      order: 1,
-      color: (t: number) => `rgba(255, 255, 255, ${t})`,
-      lat: -26.2041, // Johannesburg, South Africa
-      lng: 28.0473,
-    },
-  ]);
+  >(initialState);
+
   const globeRef = useRef<ThreeGlobe | null>(null);
 
   const defaultProps = {
@@ -179,7 +185,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
     }
   }, [globeData]);
 
-  const startAnimation = () => {
+  const startAnimation = useCallback(() => {
     if (!globeRef.current || !globeData) return;
 
     globeRef.current
@@ -215,7 +221,7 @@ export function Globe({ globeConfig, data }: WorldProps) {
       .ringRepeatPeriod(
         (defaultProps.arcTime * defaultProps.arcLength) / defaultProps.rings,
       );
-  };
+  }, [globeRef.current, globeData, data, defaultProps]);
 
   useEffect(() => {
     if (!globeRef.current || !globeData) return;
