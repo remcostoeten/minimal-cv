@@ -1,17 +1,15 @@
+'use client';
 import {
   GithubIcon,
   Linkedin,
-  MailIcon,
-  Phone,
-  PhoneCallIcon,
-  PhoneIcon,
+  MailIcon, PhoneIcon
 } from "lucide-react";
 import Flex from "../core/Flexer";
 import Pill, { PulseDot } from "../core/Pill";
 import HeaderShell from "./HeaderShell";
 import { themeColors } from "@/core/constants/colors";
 import Link from "next/link";
-import Image from "next/image";
+import { m } from "framer-motion";
 
 export default function Header() {
   return (
@@ -66,9 +64,13 @@ export default function Header() {
 }
 
 const HeaderIcon = ({ children }) => (
-  <div className="flex gap-3 bg-blend-normal">
+  <m.div whileHover={{
+    scale: 1.2,
+    transition: { duration: 1 },
+  }}
+    whileTap={{ scale: 0.9 }} className="flex gap-3 bg-blend-normal">
     <div className="bg-cardalt w-8 h-8 rounded-lg flex items-center justify-center">
       {children}
     </div>
-  </div>
+  </m.div>
 );

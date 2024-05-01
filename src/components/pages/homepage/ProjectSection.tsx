@@ -59,7 +59,9 @@ export default function ProjectSection() {
           <ProjectList />
         </div>
 
-        <CTAButton hasIcon>More about my projects</CTAButton>
+        <Link href="/about">
+          <CTAButton hasIcon>More about my projects</CTAButton>
+        </Link>
       </div>
     </BentoBox>
   );
