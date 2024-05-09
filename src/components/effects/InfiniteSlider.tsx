@@ -25,7 +25,7 @@ const InfiniteSlider: React.FC = () => {
   }, []);
 
   const slidesRow1: ReactElement[] = randomizedPills1.map((pill, index) => (
-    <Pill hasStar key={pill.id}>
+    <Pill hasStar key={pill}>
       {pill}
     </Pill>
   ));
@@ -33,12 +33,12 @@ const InfiniteSlider: React.FC = () => {
     .slice()
     .reverse()
     .map((pill, index) => (
-      <Pill hasStar key={pill.id}>
+      <Pill hasStar key={pill}>
         {pill}
       </Pill>
     ));
   const slidesRow3: ReactElement[] = randomizedPills3.map((pill, index) => (
-    <Pill hasStar key={pill.id}>
+    <Pill hasStar key={pill}>
       {pill}
     </Pill>
   ));
