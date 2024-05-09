@@ -17,7 +17,7 @@ export default function SecondSection() {
           setIsLoading(false);
         }, 1000);
       }
-    }
+    };
 
     waitForDomThenRenderWorldGlobe();
   }, []);
@@ -30,7 +30,7 @@ export default function SecondSection() {
             Lemmer, the Netherlands
           </BentoTitle>
           {isLoading ? (
-            <div className='fake-globe'/>
+            <div className="fake-globe" />
           ) : (
             <Suspense fallback={<div>Loading...</div>}>
               {WorldGlobe && <WorldGlobe />}

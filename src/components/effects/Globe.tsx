@@ -34,26 +34,26 @@ export function WorldGlobe() {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-    <div className="flex flex-row items-center justify-center h-[400px] -translate-y-10 w-full z-10">
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 200,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          opacity: { duration: 2 },
-          y: { duration: 1 },
-        }}
-        className="div"
-      ></motion.div>
-      <div className=" w-full -bottom-20 h-72 md:h-96 z-10">
+      <div className="flex flex-row items-center justify-center h-[400px] -translate-y-10 w-full z-10">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 200,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            opacity: { duration: 2 },
+            y: { duration: 1 },
+          }}
+          className="div"
+        ></motion.div>
+        <div className=" w-full -bottom-20 h-72 md:h-96 z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />
+        </div>
       </div>
-    </div>
     </Suspense>
   );
 }

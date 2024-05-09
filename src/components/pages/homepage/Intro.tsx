@@ -3,6 +3,7 @@ import BentoBox from "@/components/shells/BentoShell";
 import Paragraph from "@/components/core/Text";
 import CTAButton from "@/components/core/Cta";
 import { introduction } from "@/core/data/homepage";
+import Link from "next/link";
 export default function Intro() {
   return (
     <BentoBox>
@@ -15,7 +16,9 @@ export default function Intro() {
         have done a little Python, Shell & Lua, and want to learn Go, OCaml,
         and, and and and.... ⌛
       </Paragraph>
-      <CTAButton hasIcon>{introduction.button}</CTAButton>
+      <CTAButton hasIcon>
+        <Link href="/about">{introduction.button}</Link>
+      </CTAButton>
     </BentoBox>
   );
 }

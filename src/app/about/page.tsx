@@ -27,7 +27,7 @@ export default function TimelineComponent() {
 
         return (
           <li className="flex items-start space-x-4" key={experience.year}>
-            <div className="year-circle flex-1 smpl-6">
+            <div className="year-circle flex-1 sm:pl-6">
               <IconComponent className="about-icon-positioning" />
               <h2 className="text-slate-200">{experience.role}</h2>
               <ul className="flex flex-col gap-2">
