@@ -9,7 +9,7 @@ export default function page() {
     <>
       <Intro />
       <SecondSection />
-      <StackSection limit/>
+      <StackSection limit />
       <ProjectSection />
     </>
   );

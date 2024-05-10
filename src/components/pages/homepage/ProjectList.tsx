@@ -1,6 +1,17 @@
 "use client";
 
 import Paragraph from "@/components/core/Text";
+import { Button } from "@/components/ui/button";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -15,38 +26,33 @@ export default function ProjectList() {
       title: "A perfect blackjack strategy helper",
       anchor: "https://portfolio.remcostoeten.com/blackjack",
     },
-    {
-      title: "A visualize component debugger NPM package",
-      anchor:
-        "https://www.npmjs.com/package/@remcostoeten/visualize-component-debugger",
-    },
-    {
-      title: "Old very cool portoflio design",
-      anchor: "https://portfolio.remcostoeten.com/",
-    },
-    {
-      title: "Visual studio code UI recreated in React",
-      anchor: "https://vsc.remcostoeten.com/",
-    },
-    {
-      title: "Bezier curve CSS showcase (buggy)",
-      anchor: "https://animations.remcostoeten.com/",
-    },
-    {
-      title: "SVG to react component converter",
-      anchor:
-        "https://github.com/remcostoeten/svg-to-react-component-icon-generator",
-    },
-    {
-      title: "ShadCN ui lazymans auto importer helper",
-      anchor:
-        "https://github.com/remcostoeten/shadcn-ui-lazymans-auto-importer",
-    },
   ];
 
   return (
     <div>
-      <Paragraph>And loads more which can be found on kmy resume here </Paragraph>
+      <Paragraph>
+        And loads more which can be found on my resume here:
+        <Drawer>
+          <DrawerTrigger><span className="underline pl-2">open resume</span></DrawerTrigger>
+          <DrawerContent>
+            <DrawerHeader>
+              <DrawerTitle>My CV</DrawerTitle>
+              <DrawerDescription>This is my CV.</DrawerDescription>
+            </DrawerHeader>
+            <DrawerFooter>
+            <embed
+  src="/cvremcostoeten.pdf"
+  type="application/pdf"
+  width="100%"
+  height="600px"
+/>
+              <DrawerClose>
+                <Button variant="outline">Close</Button>
+              </DrawerClose>
+            </DrawerFooter>
+          </DrawerContent>
+        </Drawer>
+      </Paragraph>
       <ul>
         {articles.map((article, index) => (
           <motion.li
@@ -68,7 +74,7 @@ export default function ProjectList() {
           >
             <Link
               target="_blank"
-              className="flex px-2 py-4 justify-between items-center text-[#d6d3d1] hover:text-white border-[#57534e] hover:border-white group-hover:translate-x-1 transition-transform transition-colors ease-bezier"
+              className="flex px-2 py-4 justify-between items-center text-[#d6d3d1] hover:text-white border-[#57534e] hover:border-white group-hover:translate-x-1 transition transition-colors ease-bezier"
               href={article.anchor}
             >
               <span>{article.title}</span>
