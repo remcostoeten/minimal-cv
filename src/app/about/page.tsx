@@ -1,5 +1,6 @@
 "use client";
 
+import BentoBox from "@/components/shells/BentoShell";
 import {
   Accordion,
   AccordionItem,
@@ -21,7 +22,7 @@ export default function TimelineComponent() {
   ];
 
   return (
-    <ul className="about-wrapper flex flex-col space-y-6">
+    <BentoBox className="about-wrapper flex flex-col space-y-6">
       {experiences.map((experience, index) => {
         const IconComponent = iconComponents[index % iconComponents.length];
 
@@ -107,7 +108,7 @@ export default function TimelineComponent() {
           </li>
         );
       })}
-    </ul>
+    </Bentobox>
   );
 }
 

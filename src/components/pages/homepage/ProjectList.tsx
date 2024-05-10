@@ -46,7 +46,7 @@ export default function ProjectList() {
 
   return (
     <div>
-      <Paragraph>And loads more...</Paragraph>
+      <Paragraph>And loads more which can be found on kmy resume here </Paragraph>
       <ul>
         {articles.map((article, index) => (
           <motion.li

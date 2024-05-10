@@ -5,7 +5,13 @@ import BentoBox from "@/components/shells/BentoShell";
 import BentoTitle from "@/components/shells/BentoTitle";
 import { skillsData } from "@/core/data/skills";
 
-export default function StackSection() {
+type StackSectionProps = {
+  limit?: boolean;
+};
+
+export default function StackSection({ limit = false }: StackSectionProps) {
+  const displayedSkills = limit ? skillsData.slice(0, 4) : skillsData;
+
   return (
     <BentoBox>
       <BentoTitle icon={SkillIcon()}>Techstack</BentoTitle>
@@ -16,7 +22,7 @@ export default function StackSection() {
           build apps with NextJS and TypeScript, and experiment with Python,
           Lua, Solid.JS, and Svelte.
         </Paragraph>
-        {skillsData.map((skill) => (
+        {displayedSkills.map((skill) => (
           <>
             <div className="flex items-center gap-4">
               <div className="w-[68px] h-[68px] flex items-center justify-center bg-cardalt rounded-lg">

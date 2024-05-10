@@ -13,11 +13,14 @@ export default function Header() {
       <div className="flex justify-between items-center">
         <Flex>
           <Flex dir="col" justify="center" gap="small">
-            <div className="font leading-[1] text-[24px] font-medium  text-pink">
+            <Link
+              href="/"
+              className="font leading-[1] text-[24px] font-medium  text-pink"
+            >
               <span className="flex gap-2">
                 Remco <span className="hidden sm:block">Stoeten</span>
               </span>
-            </div>
+            </Link>
             <div className=" text-[14px] font-light  text-neutral-400">
               Front-end engineer
             </div>

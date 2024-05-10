@@ -420,7 +420,7 @@ function SqlIcon() {
       xmlSpace="preserve"
     >
       <path
-        fill="#000000"
+        fill="#fff"
         fillOpacity="0.701961"
         strokeWidth="0.2"
         strokeLinejoin="round"
