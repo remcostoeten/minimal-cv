@@ -33,19 +33,21 @@ export default function ProjectList() {
       <Paragraph>
         And loads more which can be found on my resume here:
         <Drawer>
-          <DrawerTrigger><span className="underline pl-2">open resume</span></DrawerTrigger>
+          <DrawerTrigger>
+            <span className="underline pl-2">open resume</span>
+          </DrawerTrigger>
           <DrawerContent>
             <DrawerHeader>
               <DrawerTitle>My CV</DrawerTitle>
               <DrawerDescription>This is my CV.</DrawerDescription>
             </DrawerHeader>
             <DrawerFooter>
-            <embed
-  src="/cvremcostoeten.pdf"
-  type="application/pdf"
-  width="100%"
-  height="600px"
-/>
+              <embed
+                src="/cvremcostoeten.pdf"
+                type="application/pdf"
+                width="100%"
+                height="600px"
+              />
               <DrawerClose>
                 <Button variant="outline">Close</Button>
               </DrawerClose>

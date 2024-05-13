@@ -29,85 +29,85 @@ export default function TimelineComponent() {
 
         return (
           <BentoBox>
-          <li className="flex items-start space-x-4" key={experience.year}>
-            <div   className="year-circle flex-1 sm:pl-6">
-              <IconComponent className="about-icon-positioning" />
-              <h2 className="text-slate-200">{experience.role}</h2>
-              <ul className="flex flex-col gap-2">
-                <li>
-                  <div className="flex gap-1 items-baseline flex-wrap ">
-                    <time className="text-slate-200 ">{experience.year}</time>
-                    {experience.location && (
-                      <p className="text-xs text-slate-200">
-                        {experience.location}
+            <li className="flex items-start space-x-4" key={experience.year}>
+              <div className="year-circle flex-1 sm:pl-6">
+                <IconComponent className="about-icon-positioning" />
+                <h2 className="text-slate-200">{experience.role}</h2>
+                <ul className="flex flex-col gap-2">
+                  <li>
+                    <div className="flex gap-1 items-baseline flex-wrap ">
+                      <time className="text-slate-200 ">{experience.year}</time>
+                      {experience.location && (
+                        <p className="text-xs text-slate-200">
+                          {experience.location}
+                        </p>
+                      )}
+                    </div>
+                    <Seperator opacity="1" spacing="4" />
+                    {experience.details?.map((detail, detailIndex) => (
+                      <p
+                        key={detailIndex}
+                        className="list-disc text-sm text-gray-500 dark:text-gray-400"
+                      >
+                        {detail}
                       </p>
-                    )}
-                  </div>
-                  <Seperator opacity="1" spacing="4" />
-                  {experience.details?.map((detail, detailIndex) => (
-                    <p
-                      key={detailIndex}
-                      className="list-disc text-sm text-gray-500 dark:text-gray-400"
-                    >
-                      {detail}
-                    </p>
-                  ))}
-
-                  {experience.projects && (
-                    <>
-                      <Seperator opacity="1" spacing="4" />
-                      <Accordion type="single" collapsible className="w-full">
-                        <AccordionItem value="item-1">
-                          <AccordionTrigger>
-                            View project details
-                          </AccordionTrigger>
-                          <AccordionContent>
-                            <ul className="flex text-xxs flex-col">
-                              {experience.projects.map(
-                                (project, projectIndex) => (
-                                  <li
-                                    className="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-2"
-                                    key={projectIndex}
-                                  >
-                                    {project.name}
-                                    {project.description}
-                                    <Link href={project.url} target="_blank ">
-                                      <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        fill="none"
-                                        viewBox="0 0 24 24"
-                                        strokeWidth={1.5}
-                                        stroke="currentColor"
-                                        width={14}
-                                        height={14}
-                                      >
-                                        <path
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-                                        />
-                                      </svg>
-                                    </Link>
-                                  </li>
-                                ),
-                              )}
-                            </ul>
-                          </AccordionContent>
-                        </AccordionItem>
-                      </Accordion>
-                    </>
-                  )}
-                  <div className="mt-2 flex flex-wrap gap-1">
-                    {experience.skills.split(",").map((skill, skillIndex) => (
-                      <Pill fontSize="12px" key={skillIndex}>
-                        {skill.trim()}
-                      </Pill>
                     ))}
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </li>
+
+                    {experience.projects && (
+                      <>
+                        <Seperator opacity="1" spacing="4" />
+                        <Accordion type="single" collapsible className="w-full">
+                          <AccordionItem value="item-1">
+                            <AccordionTrigger>
+                              View project details
+                            </AccordionTrigger>
+                            <AccordionContent>
+                              <ul className="flex text-xxs flex-col">
+                                {experience.projects.map(
+                                  (project, projectIndex) => (
+                                    <li
+                                      className="text-xs text-gray-500 dark:text-gray-400 flex items-center gap-2"
+                                      key={projectIndex}
+                                    >
+                                      {project.name}
+                                      {project.description}
+                                      <Link href={project.url} target="_blank ">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          fill="none"
+                                          viewBox="0 0 24 24"
+                                          strokeWidth={1.5}
+                                          stroke="currentColor"
+                                          width={14}
+                                          height={14}
+                                        >
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                                          />
+                                        </svg>
+                                      </Link>
+                                    </li>
+                                  ),
+                                )}
+                              </ul>
+                            </AccordionContent>
+                          </AccordionItem>
+                        </Accordion>
+                      </>
+                    )}
+                    <div className="mt-2 flex flex-wrap gap-1">
+                      {experience.skills.split(",").map((skill, skillIndex) => (
+                        <Pill fontSize="12px" key={skillIndex}>
+                          {skill.trim()}
+                        </Pill>
+                      ))}
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
           </BentoBox>
         );
       })}
