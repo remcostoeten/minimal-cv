@@ -10,17 +10,17 @@ export const skillsData = [
   },
   {
     name: "NextJS",
-    description: "So.... Also react obviously",
+    description: "But exploring Qwik, Solid, or Svelte is starting to itch",
     icon: nextIcon(),
     paragraph:
       "Fun fact I actually started the world of modern frameworks by learning NextJS, React only came during my employmenet. I think NextJS has a better DX but they are one pot nat as we say in the dutchland. Also interessted in Svelte, Qwik, Solid or any other signal based framework.",
   },
   {
     name: "React",
-    description: "For building user interfaces",
+    description:"Goes hand in hand with NextJS ofcourse.",
     icon: reactIcon(),
     paragraph:
-      "Although I prefer NextJS, they're basically the same except NextJS has used a little bit more steroids. My interest for React obviously also transfers to frameworks like SolidJS, etc.",
+      "I prefer the DX and handy features NextJS offers, but i'm well aware that in the coorporate world most will be longlasting React projects not finding the need to upgrade to Next "
   },
   {
     name: "Databases / BaaS / SQ(lite,noSQL,Postgress)",
