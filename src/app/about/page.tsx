@@ -9,8 +9,9 @@ import {
 } from "@/components/ui/accordion";
 import Seperator from "@/components/ui/separator";
 import { experiences } from "@/core/data/about";
-import { Link, Pill } from "lucide-react";
 import { JSX, SVGProps } from "react";
+import Pill from "@/components/Pill";
+import Link from "next/link";
 
 export default function TimelineComponent() {
   const iconComponents = [
@@ -27,6 +28,7 @@ export default function TimelineComponent() {
         const IconComponent = iconComponents[index % iconComponents.length];
 
         return (
+          <BentoBox>
           <li className="flex items-start space-x-4" key={experience.year}>
             <div   className="year-circle flex-1 sm:pl-6">
               <IconComponent className="about-icon-positioning" />
@@ -106,6 +108,7 @@ export default function TimelineComponent() {
               </ul>
             </div>
           </li>
+          </BentoBox>
         );
       })}
     </div>
