@@ -10,7 +10,7 @@ type StackSectionProps = {
 };
 
 export default function StackSection({ limit = false }: StackSectionProps) {
-  const displayedSkills = limit ? skillsData.slice(0, 4) : skillsData;
+  const displayedSkills = limit ? skillsData.slice(0, 3) : skillsData;
 
   return (
     <BentoBox>
