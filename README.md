@@ -1,29 +1,11 @@
-# Portfolio Site To-Do List
+# Portfolio 2024
 
-ai scaffolded todo list....
+ToDo:
 
-ui
-- [ ] Add a header
-- [ ] Add a footer
-- [ ] Color scheme for threejs globe
-
-data
-- [ ] retrtieve github stats
-- [ ] come up with relevant skills for the bento slider (homepage.ts)
-    _____________________
-
-- [ ] Add Projects Section
-  - [ ] List all projects
-  - [ ] Add project details (description, technologies used, etc.)
-  - [ ] Add link to live project and source code
-
-- [ ] Add About Me Section
-  - [ ] Write a brief introduction
-  - [ ] List skills and expertise
-  - [ ] Add contact information
-
-- [ ] Add Animations
-  - [ ] Decide where to add animations
-  - [ ] Implement animations
-
-- [ ] etc.
+- [ ] Cleanup annotations
+- [ ] Implement dark/light toggle
+- [ ] Fix lame footer text
+- [ ] Fix lame AI-generated /mystack text
+- [ ] Migrate guestbook feature over from blog.remcostoeten
+- [ ] Responsive check
+- [ ] SEO stuff
