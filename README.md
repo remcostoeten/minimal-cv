@@ -9,3 +9,5 @@ ToDo:
 - [ ] Migrate guestbook feature over from blog.remcostoeten
 - [ ] Responsive check
 - [ ] SEO stuff
+- [ ] Fid database svg
+- [ ] 
