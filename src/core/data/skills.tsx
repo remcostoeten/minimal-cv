@@ -17,10 +17,10 @@ export const skillsData = [
   },
   {
     name: "React",
-    description:"Goes hand in hand with NextJS ofcourse.",
+    description: "Goes hand in hand with NextJS ofcourse.",
     icon: reactIcon(),
     paragraph:
-      "I prefer the DX and handy features NextJS offers, but i'm well aware that in the coorporate world most will be longlasting React projects not finding the need to upgrade to Next "
+      "I prefer the DX and handy features NextJS offers, but i'm well aware that in the coorporate world most will be longlasting React projects not finding the need to upgrade to Next ",
   },
   {
     name: "Databases / BaaS / SQ(lite,noSQL,Postgress)",
