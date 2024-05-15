@@ -69,7 +69,7 @@ export default function GuestBookPage() {
   }, []);
 
   const handleNewEntryChange = (
-    event: React.ChangeEvent<HTMLTextAreaElement>
+    event: React.ChangeEvent<HTMLTextAreaElement>,
   ) => {
     setNewEntry(event.target.value);
   };
@@ -104,7 +104,7 @@ export default function GuestBookPage() {
   const handleDeleteEntry = useDeleteDoc(
     "guestbook",
     "Entry deleted successfully!",
-    "Error deleting entry!"
+    "Error deleting entry!",
   );
 
   const handleSignIn = async (provider: "github" | "google") => {
@@ -138,7 +138,9 @@ export default function GuestBookPage() {
       <AnimatePresence>
         <span>
           <h2 className="text-zinc-200 text-xl mb-0">Guestbook</h2>
-          <p className="text-sm text-zinc-300">Leave something <small>(nice)</small> to say</p>
+          <p className="text-sm text-zinc-300">
+            Leave something <small>(nice)</small> to say
+          </p>
         </span>
         <motion.div
           // ToDo: fix layout shift
@@ -179,7 +181,11 @@ export default function GuestBookPage() {
                   placeholder="Leave a message"
                   className="flex min-h-[60px] w-full rounded-md border border-zinc-600 bg-transparent p-4 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                 />
-                <Button variant="outline" className="!bg-transparent border-zinc-600 text-sm text-muted-foreground"   type="submit" >
+                <Button
+                  variant="outline"
+                  className="!bg-transparent border-zinc-600 text-sm text-muted-foreground"
+                  type="submit"
+                >
                   Post Entry
                 </Button>
               </form>

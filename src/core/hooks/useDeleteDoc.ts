@@ -1,4 +1,3 @@
-
 import { firestore } from "../database/firebase";
 import { deleteDoc, doc } from "firebase/firestore";
 import { useCallback } from "react";
@@ -7,7 +6,7 @@ import { toast } from "sonner";
 export function useDeleteDoc(
   collectionName: string,
   successMessage: string,
-  errorMessage: string
+  errorMessage: string,
 ) {
   const deleteDocument = useCallback(
     async (docId: string) => {
@@ -19,9 +18,8 @@ export function useDeleteDoc(
         toast.error(errorMessage);
       }
     },
-    [collectionName, successMessage, errorMessage]
+    [collectionName, successMessage, errorMessage],
   );
 
   return deleteDocument;
 }
-

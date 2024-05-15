@@ -40,15 +40,13 @@ export default function GuestBookComments({
               <div>
                 <div className="flex flex-col">
                   <div className="font-semibold text-gray-300">
-                    {nameHandle}{" "}
-                    <span className="ml-1">{country}</span>
+                    {nameHandle} <span className="ml-1">{country}</span>
                   </div>
-
                 </div>
                 <div className="text-gray-400">{message}</div>
                 <time className="text-xs text-gray-500 dark:text-gray-400">
-                    {date}
-                  </time>
+                  {date}
+                </time>
               </div>
 
               {deleteComment && (
@@ -60,7 +58,7 @@ export default function GuestBookComments({
           </div>
         </div>
       </div>
-              <div className="w-full h-[1px] bg-neutral-700"/>
+      <div className="w-full h-[1px] bg-neutral-700" />
     </>
   );
 }
