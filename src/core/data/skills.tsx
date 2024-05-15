@@ -20,7 +20,7 @@ export const skillsData = [
     description: "Goes hand in hand with NextJS ofcourse.",
     icon: reactIcon(),
     paragraph:
-      "I prefer the DX and handy features Next.js offers, but I'm well aware that in the corporate world, most will be long-lasting React projects not finding the need to upgrade to Next.js.",
+      "I prefer the DX and handy features NextJS offers, but i'm well aware that in the coorporate world most will be longlasting React projects not finding the need to upgrade to Next ",
   },
   {
     name: "Databases / BaaS / SQ(lite,noSQL,Postgress)",

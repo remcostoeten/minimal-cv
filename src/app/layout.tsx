@@ -5,6 +5,8 @@ import PageShell from "@/components/shells/PageShell";
 import Header from "@/components/menu/Header";
 import FooterShell from "@/components/shells/FooterShell";
 import SiteInProgressNotification from "@/components/effects/InProgressToast";
+import { AuthUserProvider } from "@/components/AuthUserProvider.";
+import LoginLink from "@/components/auth/LoginLink";
 
 export const metadata: Metadata = {
   title: "Remco Stoeten",
@@ -19,16 +21,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="bg-body">
-        <ProviderWrapper>
-          <PageShell>
-            <>
-              <Header />
-              {children}
-              <FooterShell />
-              <SiteInProgressNotification />
-            </>
-          </PageShell>
-        </ProviderWrapper>
+        <AuthUserProvider>
+          <ProviderWrapper>
+            <PageShell>
+              <>
+              <LoginLink/>
+                <Header />
+                {children}
+                <FooterShell />
+                <SiteInProgressNotification />
+              </>
+            </PageShell>
+          </ProviderWrapper>
+        </AuthUserProvider>
       </body>
     </html>
   );
