@@ -1,3 +1,5 @@
+import { GraphqlIconRegular } from "@/components/core/icons";
+
 const iconSize = 32;
 
 export const skillsData = [
@@ -27,7 +29,7 @@ export const skillsData = [
     description: "BaaS, ORM's and raw SQL",
     paragraph:
       "I love using BaaS for quick projects. Firebase is my goto but lately I have been exploring Convex which basically is SQL. At work we use GraphQL which then uses Postgress. I have also used MongoDB and SQLite for smaller projects. Also used Prisma and Drizzle as ORM but they are not needed when using a BaaS. And for the heck of it i'd like to write raw sql queries, but there's only so much time.",
-    icon: GraphqlIcon(),
+    icon: GraphqlIconRegular(),
   },
   {
     name: "CSS / Styled Components / SASS / Tailwind",

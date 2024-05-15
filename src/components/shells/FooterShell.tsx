@@ -9,9 +9,8 @@ export default function FooterShell() {
     <BentoBox>
       <Flex justify="between">
         <div className="flex flex-col ">
-          <Paragraph>© 2024. All rights Reserved</Paragraph>
           <Paragraph>
-            Made by <strong>Remco stoeten</strong> in <strong>Nextjs</strong>
+            Made with <span className="pulse strong">❤️</span> by <strong>Remco Stoeten</strong><br/> in <strong>Nextjs</strong> & <strong>TypeScript</strong>.
           </Paragraph>
         </div>
         <div className="flex flex-col text-right">
