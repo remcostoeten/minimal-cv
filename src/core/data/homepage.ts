@@ -26,8 +26,11 @@ export const pills = [
   "Node.js",
   "Sass",
   "Less",
-  "Agile 🤢",
-  "Scrum 🤢",
+  "Agile/Scrum",
+  "Shell(ssh/vim)",
+  "Azure/Github/Lab/Bitbucket"
+  "Cloud",
+  "Docker",
   "Styled Components",
 ];
 
