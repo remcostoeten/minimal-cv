@@ -10,7 +10,7 @@ type StackSectionProps = {
 };
 
 export default function StackSection({ limit = false }: StackSectionProps) {
-  const displayedSkills = limit ? skillsData.slice(0, 4) : skillsData;
+  const displayedSkills = limit ? skillsData.slice(0, 3) : skillsData;
 
   return (
     <BentoBox>
@@ -19,8 +19,10 @@ export default function StackSection({ limit = false }: StackSectionProps) {
         <Paragraph spacing="4">
           I transitioned from Magento 2 (PHP) to a modern stack. Now, I
           primarily use React, GraphQL, and Django at work. In my free time, I
-          build apps with NextJS and TypeScript, and experiment with Python,
-          Lua, Solid.JS, and Svelte.
+          build apps with NextJS and TypeScript. Besides that, I have dabbled a
+          little bit in Python, Lua, Svelte, and Bash. I find all technologies
+          interesting and am planning on playing around with Go, eventually
+          transitioning into full-stack (real full stack, not just JS + CRUD)."
         </Paragraph>
         {displayedSkills.map((skill) => (
           <>
