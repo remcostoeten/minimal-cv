@@ -25,7 +25,6 @@ export default function RootLayout({
           <ProviderWrapper>
             <PageShell>
               <>
-                <LoginLink />
                 <Header />
                 {children}
                 <FooterShell />
