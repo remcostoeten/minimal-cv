@@ -183,7 +183,7 @@ export default function GuestBookPage() {
                 />
                 <Button
                   variant="outline"
-                  className="!bg-transparent border-zinc-600 text-sm text-muted-foreground"
+                  className="!bg-transparent hover:text-zinc-400 border-zinc-600 text-sm text-muted-foreground"
                   type="submit"
                 >
                   Post Entry
@@ -196,14 +196,14 @@ export default function GuestBookPage() {
                 </h4>
                 <div className="flex sm:items-center gap-2 sm-row">
                   <Button
-                    variant="outline"
+                    className="text-white"
                     onClick={() => handleSignIn("github")}
                   >
                     <Icons.github className="mr-2 size-4" />
                     Sign In with Github
                   </Button>
                   <Button
-                    variant="outline"
+                    className="text-white"
                     onClick={() => handleSignIn("google")}
                   >
                     <Icons.google.bnw className="mr-2 size-4" fill="white" />
