@@ -11,7 +11,14 @@ import {
 } from "../ui/alert-dialog";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "../ui/card";
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "../ui/card";
 import { useAuthState, useSignOut } from "react-firebase-hooks/auth";
 import { Icons } from "../Icons";
 import { useGithubSignIn, useGoogleSignIn } from "@/core/hooks/sigin-providers";
