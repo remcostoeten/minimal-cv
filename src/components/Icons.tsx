@@ -1,10 +1,10 @@
 import {
+  LucideIcon,
   LucideProps,
   Moon,
   PencilIcon,
   SunMedium,
   Twitter,
-  type Icon as LucideIcon,
 } from "lucide-react";
 
 interface ExtendedLucideProps extends LucideProps {
