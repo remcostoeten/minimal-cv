@@ -47,10 +47,10 @@ export const skillsData = [
   },
   {
     name: "Visual Studio Code",
-    description: "My favorite code editor",
+    description: "My go-to code editor",
     icon: vscodeIcon(),
     paragraph:
-      "I mostly use vscode, but I get frustrated quite a lot with the terrible performance, especially with larger TypeScript projects. For small projects and quick editing, I use NeoVim like a real man. But due to skill issues, I haven't been able to switch entirely.",
+      "The performance is terrible on big TypeScript projects. It drives me crazy sometimes, but alternatives also don't don't do it for me. I have dozends of custom shortcut configurations to fly through my IDE. For small projects and quick editing, I use NeoVim like a real man. But due to skill issues, I haven't been able to switch entirely.",
   },
   {
     name: "NeoVim",
@@ -61,10 +61,10 @@ export const skillsData = [
   },
   {
     name: "Figma",
-    paragrapion: "For UI/UX design",
+    paragrapion: "For UI/UX design and prototyping",
     icon: figmaIcon(),
     paragraph:
-      "I have a degree in graphic design. Although I don't actively design anymore, I still prototype and dabble around in some designs here and there. Especially with the new AI features. Sometimes I even opt for the good old Photoshop suite.",
+      "I have a degree in Graphic Design. Although I don't actively design anymore and back when I did we used Photoshop and sliced each component individually, I still prototype and dabble around in some designs here and there. Especially with the new AI features. Sometimes I even opt for the good old Photoshop suite.",
   },
 ];
 
