@@ -28,7 +28,7 @@ export const pills = [
   "Less",
   "Agile/Scrum",
   "Shell(ssh/vim)",
-  "Azure/Github/Lab/Bitbucket"
+  "Azure/Github/Lab/Bitbucket",
   "Cloud",
   "Docker",
   "Styled Components",
