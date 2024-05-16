@@ -194,7 +194,7 @@ export default function GuestBookPage() {
                 <h4 className="text-gray-400">
                   Please login in order to leave a message
                 </h4>
-                <div className="flex sm:items-center gap-2 sm-row">
+                <div className="flex sm:items-center gap-2 flex-col sm:flex-row">
                   <Button
                     className="text-white"
                     onClick={() => handleSignIn("github")}
