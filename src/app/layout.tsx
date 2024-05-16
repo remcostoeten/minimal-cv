@@ -6,7 +6,6 @@ import Header from "@/components/menu/Header";
 import FooterShell from "@/components/shells/FooterShell";
 import SiteInProgressNotification from "@/components/effects/InProgressToast";
 import { AuthUserProvider } from "@/components/AuthUserProvider.";
-import LoginLink from "@/components/auth/LoginLink";
 
 export const metadata: Metadata = {
   title: "Remco Stoeten",
