@@ -1,5 +1,6 @@
 "use client";
 
+import { MovingBorderButton } from "@/components/core/BorderButton";
 import Paragraph from "@/components/core/Text";
 import { Button } from "@/components/ui/button";
 import {
@@ -12,6 +13,7 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import { siteConfig } from "@/core/data/personal-data";
 import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -33,11 +35,11 @@ export default function ProjectList() {
   ];
   return (
     <div>
-      <Paragraph>
-        And loads more which can be found on my resume here:
+      <Paragraph className="flex flex-col gap-2">
+        <span>And loads more which can be found on my resume here:</span>
         <Drawer>
           <DrawerTrigger>
-            <span className="underline pl-2">open resume</span>
+            <MovingBorderButton>Open resume</MovingBorderButton>
           </DrawerTrigger>
           <DrawerContent>
             <DrawerHeader>
@@ -79,7 +81,7 @@ export default function ProjectList() {
           >
             <Link
               target="_blank"
-              className="flex px-2 py-4 justify-between items-center text-[#d6d3d1] hover:text-white border-[#57534e] hover:border-white group-hover:translate-x-1 transition transition-colors ease-bezier"
+              className="flex px-2 py-4 justify-between items-center text-[#d6d3d1] hover:text-white border-[#57534e] hover:border-white group-hover:translate-x-1 transition  ease-bezier"
               href={article.anchor}
             >
               <span>{article.title}</span>
