@@ -9,7 +9,7 @@ export default function FooterShell() {
       <div className="flex justify-between flex-col sm:flex-row">
         <div className="flex flex-col sm:flex-row">
           <Paragraph>
-            Made with <span className="pulse strong">❤️</span> by{" "}
+            Made with <span className="pulse strong px-1">❤️</span> by{" "}
             <strong>Remco Stoeten</strong>
             <br /> in <strong>Nextjs</strong> & <strong>TypeScript</strong>.
           </Paragraph>

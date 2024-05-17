@@ -19,42 +19,45 @@ const InfiniteSlider: React.FC = () => {
   const [randomizedPills3, setRandomizedPills3] = useState(pills);
 
   useEffect(() => {
-    const shuffledPills = shuffleArray([...pills]);
-    setRandomizedPills1(shuffledPills);
-    setRandomizedPills2(shuffleArray(shuffledPills));
-    setRandomizedPills3(shuffleArray(shuffledPills));
+    setRandomizedPills1(shuffleArray([...pills]));
+    setRandomizedPills2(shuffleArray([...pills]));
+    setRandomizedPills3(shuffleArray([...pills]));
   }, []);
 
   const slidesRow1: ReactElement[] = randomizedPills1.map((pill, index) => (
-    <Pill hasStar key={`${pill}-${index}`}>
+    <Pill hasStar key={pill}>
       {pill}
     </Pill>
   ));
-
   const slidesRow2: ReactElement[] = randomizedPills2
     .slice()
     .reverse()
     .map((pill, index) => (
-      <Pill hasStar key={`${pill}-${index}`}>
+      <Pill hasStar key={pill}>
         {pill}
       </Pill>
     ));
   const slidesRow3: ReactElement[] = randomizedPills3.map((pill, index) => (
-    <Pill hasStar key={`${pill}-${index}`}>
+    <Pill hasStar key={pill}>
       {pill}
     </Pill>
   ));
 
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{
+      initial={{ x: 555, opacity: 0, scale: 0.8, y: 200 }}
+      animate={{
         opacity: 1,
         scale: 1,
+        x: 0,
+        y: 0,
         transition: {
           duration: 0.9,
-          delay: 1,
+          delay: 1.5,
           ease: BEZIER_CURVES.BEZIERWTO,
+          opacity: {
+            delay: 0.5,
+          },
         },
       }}
       viewport={{ once: true }}
@@ -68,7 +71,6 @@ const InfiniteSlider: React.FC = () => {
               x: ["-65%", "0%"],
               transition: {
                 ease: "linear",
-                delay: 2,
                 duration: 80,
                 repeat: Infinity,
               },
@@ -89,22 +91,40 @@ const InfiniteSlider: React.FC = () => {
         <div className="flex-shrink-0" style={{ overflowX: "auto" }}>
           <motion.div
             className="flex"
-            initial={{ opacity: 0, scale: 0.7 }}
-            whileInView={{
-              opacity: 1,
-              scale: 1,
-            }}
             animate={{
               x: ["0%", "-90%"],
               transition: {
                 ease: "linear",
-                delay: 2,
                 duration: 80,
                 repeat: Infinity,
               },
             }}
           >
             {slidesRow2.map((slide, index) => (
+              <div
+                key={index}
+                className="flex items-center justify-center h-full text-6xl"
+              >
+                {slide}
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+      <div className="flex w-full mt-4">
+        <div className="flex-shrink-0" style={{ overflowX: "auto" }}>
+          <motion.div
+            className="flex"
+            animate={{
+              x: ["-80%", "0%"],
+              transition: {
+                ease: "linear",
+                duration: 85,
+                repeat: Infinity,
+              },
+            }}
+          >
+            {slidesRow3.map((slide, index) => (
               <div
                 key={index}
                 className="flex items-center justify-center h-full text-6xl"
