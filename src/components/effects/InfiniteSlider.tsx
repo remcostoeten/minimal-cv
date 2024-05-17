@@ -1,9 +1,9 @@
-"use client";
+  "use client";
 import React, { ReactElement, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import Pill from "../core/Pill";
-import { pills } from "@/core/data/homepage";
-import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
+import Pill from "../core/Pill"; // Ensure this path is correct
+import { pills } from "@/core/data/homepage"; // Ensure this path is correct
+import { BEZIER_CURVES } from "@/core/lib/bezier-curves"; // Ensure this path is correct
 
 function shuffleArray(array: any[]) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -19,26 +19,27 @@ const InfiniteSlider: React.FC = () => {
   const [randomizedPills3, setRandomizedPills3] = useState(pills);
 
   useEffect(() => {
-    setRandomizedPills1(shuffleArray([...pills]));
-    setRandomizedPills2(shuffleArray([...pills]));
-    setRandomizedPills3(shuffleArray([...pills]));
+    const shuffledPills = shuffleArray([...pills]);
+    setRandomizedPills1(shuffledPills);
+    setRandomizedPills2(shuffleArray(shuffledPills)); // Re-shuffle for variety
+    setRandomizedPills3(shuffleArray(shuffledPills)); // Re-shuffle again
   }, []);
 
   const slidesRow1: ReactElement[] = randomizedPills1.map((pill, index) => (
-    <Pill hasStar key={pill}>
+    <Pill hasStar key={`${pill}-${index}`}>
       {pill}
     </Pill>
   ));
   const slidesRow2: ReactElement[] = randomizedPills2
-    .slice()
-    .reverse()
-    .map((pill, index) => (
-      <Pill hasStar key={pill}>
+   .slice()
+   .reverse()
+   .map((pill, index) => (
+      <Pill hasStar key={`${pill}-${index}`}>
         {pill}
       </Pill>
     ));
   const slidesRow3: ReactElement[] = randomizedPills3.map((pill, index) => (
-    <Pill hasStar key={pill}>
+    <Pill hasStar key={`${pill}-${index}`}>
       {pill}
     </Pill>
   ));
@@ -66,6 +67,7 @@ const InfiniteSlider: React.FC = () => {
               x: ["-65%", "0%"],
               transition: {
                 ease: "linear",
+                delay: 2,
                 duration: 80,
                 repeat: Infinity,
               },
@@ -86,10 +88,15 @@ const InfiniteSlider: React.FC = () => {
         <div className="flex-shrink-0" style={{ overflowX: "auto" }}>
           <motion.div
             className="flex"
+            initial={{opacity: 0, scale:.7}}
+            whileInView={{
+              opacity: 1, scale: 1
+            }}
             animate={{
               x: ["0%", "-90%"],
               transition: {
                 ease: "linear",
+                delay: 2,
                 duration: 80,
                 repeat: Infinity,
               },
@@ -113,6 +120,7 @@ const InfiniteSlider: React.FC = () => {
             animate={{
               x: ["-80%", "0%"],
               transition: {
+                delay: 2,
                 ease: "linear",
                 duration: 85,
                 repeat: Infinity,
