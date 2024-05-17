@@ -14,7 +14,7 @@ export default function Pill({
   children,
   bg = "cardalt",
   color,
-  text = "222px",
+  text = "22px",
   borderColor = "transparent",
 }: PillProps) {
   return (

@@ -15,23 +15,23 @@ export default function CTAButton({
   hasIcon = false,
   ...props
 }: CTAButtonProps) {
-  return href ? (
-    <Link
-      href={href}
-      className={`cta-button flex flex-row items-center justify-center gap-1.5 h-[64px] px-6 text-green hover:text-green/20 hover:bg-cardalt/88 animate-in transition-all bg-cardalt rounded-lg shadow-md cursor-pointer overflow-hidden relative`}
-      {...props}
-    >
-      {children}
-      {hasIcon && <span className="ml-2">{arrowIcon}</span>}
-    </Link>
+    return href ? (
+      <Link
+          href={href}
+          className={`cta-button flex flex-row items-center justify-center gap-1.5 h-[64px] px-6 text-green hover:bg-cardalt/80 hover:border-green/10 border border-transparent transition-all duration-400 ease-in-out bg-cardalt rounded-lg shadow-md cursor-pointer overflow-hidden relative hover:glow-green`}
+          {...props}
+      >
+          {children}
+          {hasIcon && <span className="ml-2">{arrowIcon}</span>}
+      </Link>
   ) : (
-    <button
-      className={`cta-button flex flex-row items-center justify-center gap-1.5 h-[42px] hover:bg-cardalt/85 transition-all px-6 text-[14px] text-green bg-${bgColor} rounded-lg shadow-md  cursor-pointer overflow-hidden relative`}
-      {...props}
-    >
-      {children}
-      {hasIcon && <span className="ml-2">{arrowIcon}</span>}
-    </button>
+      <button
+          className={`cta-button flex flex-row items-center justify-center gap-1.5 h-[64px] px-6 text-green hover:bg-cardalt/80 hover:border-green/10 border border-transparent transition-all duration-600 ease-in-out bg-cardalt rounded-lg shadow-md cursor-pointer overflow-hidden relative hover:glow-green`}
+          {...props}
+      >
+          {children}
+          {hasIcon && <span className="ml-2">{arrowIcon}</span>}
+      </button>
   );
 }
 
