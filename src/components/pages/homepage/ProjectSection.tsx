@@ -59,8 +59,8 @@ export default function ProjectSection() {
           <ProjectList />
         </div>
 
-        <Link href="/about">
-          <CTAButton hasIcon>More about my projects</CTAButton>
+        <Link href="https://github.com/remcostoeten?tab=repositories">
+          <CTAButton hasIcon>All my projects</CTAButton>
         </Link>
       </div>
     </BentoBox>

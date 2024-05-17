@@ -26,8 +26,11 @@ export default function ProjectList() {
       title: "A perfect blackjack strategy helper",
       anchor: "https://portfolio.remcostoeten.com/blackjack",
     },
+    {
+      title: "A collection of useful utility scripts",
+      anchor: "https://github.com/remcostoeten/utility-scripts",
+    },
   ];
-
   return (
     <div>
       <Paragraph>
