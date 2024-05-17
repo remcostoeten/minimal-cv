@@ -7,6 +7,8 @@ import BentoTitle from "@/components/shells/BentoTitle";
 import { skillsData } from "@/core/data/skills";
 import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
 import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import { useState, useEffect } from "react";
 
 type StackSectionProps = {
   limit?: boolean;
@@ -14,6 +16,15 @@ type StackSectionProps = {
 
 export default function StackSection({ limit = false }: StackSectionProps) {
   const displayedSkills = limit ? skillsData.slice(0, 3) : skillsData;
+  const [isStackPage, setIsStackPage] = useState(true);
+  const pathname = usePathname();
+  const stackPage = pathname === "/my-stack";
+
+  useEffect(() => {
+    if (!stackPage) {
+      setIsStackPage(false);
+    }
+  }, [pathname]);
 
   const container = {
     hidden: { opacity: 0, scale: 0.8 },
@@ -45,10 +56,10 @@ export default function StackSection({ limit = false }: StackSectionProps) {
       <BentoTitle icon={SkillIcon()}>Techstack</BentoTitle>
       <div className="flex flex-col gap-2">
         <Paragraph spacing="4">
-          I tra NextJS and TypeScript. Besides that, I have dabbled a little bit
-          in Python, Lua, Svelte, and Bash. I find all technologies interesting
-          and am planning on playing around with Go, eventually transitioning
-          into full-stack (real full stack, not just JS + CRUD).
+          I train NextJS and TypeScript. Besides that, I have dabbled a little
+          bit in Python, Lua, Svelte, and Bash. I find all technologies
+          interesting and am planning on playing around with Go, eventually
+          transitioning into full-stack (real full stack, not just JS + CRUD).
         </Paragraph>
         <motion.div
           variants={container}
@@ -79,9 +90,11 @@ export default function StackSection({ limit = false }: StackSectionProps) {
             </motion.div>
           ))}
         </motion.div>
-        <CTAButton href="/my-stack" hasIcon>
-          More about my stack
-        </CTAButton>
+        {isStackPage === false && (
+          <CTAButton href="/my-stack" hasIcon>
+            More about my stack
+          </CTAButton>
+        )}
       </div>
     </BentoBox>
   );
