@@ -1,3 +1,4 @@
+'use client';
 import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
 import { motion } from "framer-motion";
 

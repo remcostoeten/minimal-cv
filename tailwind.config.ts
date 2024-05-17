@@ -18,6 +18,11 @@ const config = {
         "2xl": "1400px",
       },
     },
+    variants: {
+      extend: {
+        boxShadow: ['hover'],
+      }
+    },
     extend: {
       backgroundColor: {
         body: "var(--body)",
@@ -26,6 +31,9 @@ const config = {
         pink: "var(--pink)",
         white: "var(--white)",
         green: "var(--green)",
+      },
+      boxShadow: {
+        'glow-green': '0 0 10px #00cc96, 0 0 20px #00cc96, 0 0 30px #00cc96, 0 0 40px #00cc96',
       },
       colors: {
         text: "#999",
@@ -62,6 +70,7 @@ const config = {
           DEFAULT: "hsl(var(--popover))",
           foreground: "hsl(var(--popover-foreground))",
         },
+
         card: {
           DEFAULT: "hsl(#0f0f0f)",
           foreground: "hsl(var(--card-foreground))",
