@@ -14,18 +14,13 @@ export default function Pill({
   children,
   bg = "cardalt",
   color,
-  text = "14px",
+  text = "222px",
   borderColor = "transparent",
 }: PillProps) {
   return (
     <div className="flex items-center justify-center flex-nowrap gap-3 h-auto overflow-hidden py-0 px-2  relative w-auto">
       {hasStar && <StarIcon />}
-      <div
-        className={`text-[${text}] bg-${bg} text-${color} ${borderColor !== "transparent" ? "border" : ""} border-${borderColor} gap-2 p-[12px] h-[36px] rounded-[12px]  flex w-full break-words items-center justify-center `}
-      >
-        {" "}
-        {children}
-      </div>
+      <div className={`text-[${text}] enter `}> {children}</div>
     </div>
   );
 }

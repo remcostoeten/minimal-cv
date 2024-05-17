@@ -32,7 +32,7 @@ export function Button({
   return (
     <Component
       className={cn(
-        "bg-transparent relative text-sm h-7 w-32 p-[1px] overflow-hidden text-stone-100", // Adjusted text size, height, width, and padding
+        "bg-transparent relative text-sm h-9 w-[175px] p-[1px] overflow-hidden text-stone-100",
         containerClassName,
       )}
       style={{
@@ -47,7 +47,7 @@ export function Button({
         <MovingBorder duration={duration} rx="30%" ry="30%">
           <div
             className={cn(
-              "h-6 w-16 opacity-[0.8] bg-[radial-gradient(var(--pink)_40%,transparent_60%)]", // Adjusted height and width
+              "h-6 w-16 opacity-[0.8] bg-[radial-gradient(var(--green)_10%,transparent_60%)]", // Adjusted height and width
               borderClassName,
             )}
           />

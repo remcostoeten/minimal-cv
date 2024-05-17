@@ -26,6 +26,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect, FormEvent } from "react";
 import { toast } from "sonner";
 import BentoBox from "@/components/shells/BentoShell";
+import posthog from "posthog-js";
 
 export type GuestbookEntry = {
   id?: string;
@@ -96,7 +97,7 @@ export default function GuestBookPage() {
     };
 
     await addDoc(entriesRef, newEntryData);
-
+    posthog.capture('new_entry_submit', { user: user?.displayName || '', text: newEntry });
     setNewEntry("");
     toast("Entry posted successfully!");
   };
@@ -111,9 +112,11 @@ export default function GuestBookPage() {
     setIsLoading(true);
     try {
       if (provider === "github") {
-        await signInWithGithub();
+        signInWithGithub();
+        posthog.capture('sign_in', { provider: 'github' });
       } else if (provider === "google") {
-        await signInWithGoogle();
+        signInWithGoogle();
+        posthog.capture('sign_in', { provider: 'google' });
       }
       toast("Signed in successfully!");
     } catch (error) {

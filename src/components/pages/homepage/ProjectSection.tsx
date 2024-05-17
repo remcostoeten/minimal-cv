@@ -72,12 +72,12 @@ function projectIcon() {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 256 256"
+      height="24"
+      width="24"
       focusable="false"
       color="var(--token-82600c9b-73af-46dc-b10d-4e1f7985fe89, rgb(0, 204, 150))"
       style={{
         userSelect: "none",
-        width: "24",
-        height: "24",
         display: "inline-block",
         fill: "var(--token-82600c9b-73af-46dc-b10d-4e1f7985fe89, rgb(0, 204, 150))",
         color:
