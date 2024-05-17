@@ -6,8 +6,9 @@ const { execSync } = require('child_process');
 
 const loadFormatter = () => {
   try {
-    console.log('Trying to load prettier');
+    console.log('Trying to load prettier...');
     execSync('prettier --version');
+    console.log('Loaded prettier');
     return { type: 'prettier', module: null };
   } catch (err) {
     console.error('Failed to load prettier, trying Eslint', err);
@@ -61,17 +62,17 @@ const formatter = loadFormatter();
     });
   }
 
-function findAndCleanUpComments(baseDir, fileName) {
-  const files = fs.readdirSync(baseDir);
-  files.forEach(file => {
-    const fullPath = path.join(baseDir, file);
-    if (fs.statSync(fullPath).isDirectory()) {
-      findAndCleanUpComments(fullPath, fileName);
-    } else if (file === fileName && path.extname(fullPath) === '.tsx') {
-      removeSingleLineComments(fullPath);
-    }
-  });
-}
+  function findAndCleanUpComments(baseDir, fileName) {
+    const files = fs.readdirSync(baseDir);
+    files.forEach(file => {
+      const fullPath = path.join(baseDir, file);
+      if (fs.statSync(fullPath).isDirectory()) {
+        findAndCleanUpComments(fullPath, fileName);
+      } else if (file === fileName) {
+        removeSingleLineComments(fullPath);
+      }
+    });
+  }
 
 if (process.argv.length!== 3) {
   console.log("Usage: node cleanup-comments-simple.js <filename>");
