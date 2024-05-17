@@ -97,7 +97,10 @@ export default function GuestBookPage() {
     };
 
     await addDoc(entriesRef, newEntryData);
-    posthog.capture('new_entry_submit', { user: user?.displayName || '', text: newEntry });
+    posthog.capture("new_entry_submit", {
+      user: user?.displayName || "",
+      text: newEntry,
+    });
     setNewEntry("");
     toast("Entry posted successfully!");
   };
@@ -113,10 +116,10 @@ export default function GuestBookPage() {
     try {
       if (provider === "github") {
         signInWithGithub();
-        posthog.capture('sign_in', { provider: 'github' });
+        posthog.capture("sign_in", { provider: "github" });
       } else if (provider === "google") {
         signInWithGoogle();
-        posthog.capture('sign_in', { provider: 'google' });
+        posthog.capture("sign_in", { provider: "google" });
       }
       toast("Signed in successfully!");
     } catch (error) {

@@ -20,8 +20,8 @@ const config = {
     },
     variants: {
       extend: {
-        boxShadow: ['hover'],
-      }
+        boxShadow: ["hover"],
+      },
     },
     extend: {
       backgroundColor: {
@@ -33,7 +33,8 @@ const config = {
         green: "var(--green)",
       },
       boxShadow: {
-        'glow-green': '0 0 10px #00cc96, 0 0 20px #00cc96, 0 0 30px #00cc96, 0 0 40px #00cc96',
+        "glow-green":
+          "0 0 10px #00cc96, 0 0 20px #00cc96, 0 0 30px #00cc96, 0 0 40px #00cc96",
       },
       colors: {
         text: "#999",

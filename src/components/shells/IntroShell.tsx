@@ -4,7 +4,7 @@ import AnimatedElement from "@/components/effects/AnimatedElement";
 import Seperator from "./Separator";
 
 interface IntroShellProps {
-  egbeurftitle: string;
+  title: string;
   description: string;
   showSeperator?: boolean;
   spacingTop?: string;
