@@ -5,6 +5,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export default function ProviderWrapper({ children }) {
   return (
+    
     <HydrationOverlay>
       {children}
       <SpeedInsights />
