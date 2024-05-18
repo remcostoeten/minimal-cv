@@ -1,6 +1,5 @@
 "use client";
 
-import { siteConfig } from "@/core/data/personal-data";
 import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
 import { motion } from "framer-motion";
 import Link from "next/link";

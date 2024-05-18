@@ -15,8 +15,8 @@ export default function FooterShell() {
           </Paragraph>
         </div>
         <span className="w-full h-[1px] bg-zinc-600 opacity-50 my-2 sm:hidden" />
-        <div className="flex gap-2 sm:text-right">
-          <div className="flex flex-col-reverse">
+        <div className="flex gap-2 sm:text-right w-full justify-between">
+          <div className="flex justify-between  w-full sm:flex-col-reverse">
             <Paragraph>
               <Link
                 className="underline"
@@ -36,29 +36,38 @@ export default function FooterShell() {
                 Github
               </Link>
             </Paragraph>
-          </div>
-          <div>
-              <Paragraph className='hidden sm:block'>
+            <Paragraph className="sm:hidden">
               <Link
                 className="underline"
-                href="https://portfolio.remcostoeten.com/"
+                href={siteConfig.links.linkedin}
                 target="_blank"
               >
-                Portfolio v1
+                LinkedIn
               </Link>
             </Paragraph>
-            <div className="flex flex-col">
-              <Paragraph>
-                <Link
-                  className="underline"
-                  href="        https://blog-remcostoetn-git-master2-remcostoetens-projects.vercel.app/
+          </div>
+        </div>
+        <div className="hidden sm:block">
+          <Paragraph>
+            <Link
+              className="underline"
+              href="https://portfolio.remcostoeten.com/"
+              target="_blank"
+            >
+              Portfolio v1
+            </Link>
+          </Paragraph>
+          <div className="flex flex-col">
+            <Paragraph>
+              <Link
+                className="underline"
+                href="        https://blog-remcostoetn-git-master2-remcostoetens-projects.vercel.app/
                   "
-                  target="_blank"
-                >
-                  Portfolio v3
-                </Link>
-              </Paragraph>
-            </div>
+                target="_blank"
+              >
+                Portfolio v3
+              </Link>
+            </Paragraph>
           </div>
         </div>
       </div>

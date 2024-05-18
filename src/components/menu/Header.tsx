@@ -100,30 +100,30 @@ export default function Header() {
                     </svg>
                   </a>
                 </button>
-<DrawerClose>
-  <button className="download w-8 h-8 bg-cardalt rounded-lg flex items-center justify-center z-[9999]">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="white"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <line x1="18" y1="6" x2="6" y2="18"></line>
-      <line x1="6" y1="6" x2="18" y2="18"></line>
-    </svg>
-  </button>
-</DrawerClose>
+                <DrawerClose>
+                  <button className="download w-8 h-8 bg-cardalt rounded-lg flex items-center justify-center z-[9999]">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="white"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <line x1="18" y1="6" x2="6" y2="18"></line>
+                      <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                  </button>
+                </DrawerClose>
               </div>
               <embed
                 src="/cvremcostoeten.pdf"
                 type="application/pdf"
                 width="100%"
-                height="600px"
+                height="100%"
               />
             </DrawerContent>
           </Drawer>

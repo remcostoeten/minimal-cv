@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { ReactNode } from "react";
 import {
   motion,
   useAnimationFrame,
@@ -21,7 +21,7 @@ export function Button({
   ...otherProps
 }: {
   borderRadius?: string;
-  children: React.ReactNode;
+  children: ReactNode;
   as?: any;
   containerClassName?: string;
   borderClassName?: string;
@@ -32,7 +32,7 @@ export function Button({
   return (
     <Component
       className={cn(
-        "bg-transparent relative text-sm h-9 w-[175px] p-[1px] overflow-hidden text-stone-100",
+        "bg-transparent relative text-sm h-9 w-[175px] p-[1px] overflow-hidden text-stone-100 mt-1.5",
         containerClassName,
       )}
       style={{

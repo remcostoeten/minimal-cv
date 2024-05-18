@@ -7,7 +7,6 @@ import {
   AccordionTrigger,
   AccordionContent,
 } from "@/components/ui/accordion";
-import Seperator from "@/components/ui/separator";
 import { experiences } from "@/core/data/about";
 import { JSX, SVGProps } from "react";
 import Pill from "@/components/Pill";
@@ -32,22 +31,23 @@ export default function TimelineComponent() {
             <li className="flex items-start space-x-4" key={experience.year}>
               <div className="year-circle flex-1 sm:pl-6">
                 <IconComponent className="about-icon-positioning" />
-                <h2 className="text-slate-200">{experience.role}</h2>
+                <h2 className="text-neutral-200">{experience.role}</h2>
                 <ul className="flex flex-col gap-2">
-                  <li>
+                  <li className="py-2.5">
                     <div className="flex gap-1 items-baseline flex-wrap ">
-                      <time className="text-slate-200 ">{experience.year}</time>
+                      <time className="text-neutral-300">
+                        {experience.year}
+                      </time>
                       {experience.location && (
                         <p className="text-xs text-slate-200">
                           {experience.location}
                         </p>
                       )}
                     </div>
-                    <Seperator opacity="1" spacing="4" />
                     {experience.details?.map((detail, detailIndex) => (
                       <p
                         key={detailIndex}
-                        className="list-disc text-sm text-gray-500 dark:text-gray-400"
+                        className="list-disc text-sm text-neutral-400"
                       >
                         {detail}
                       </p>
@@ -55,7 +55,6 @@ export default function TimelineComponent() {
 
                     {experience.projects && (
                       <>
-                        <Seperator opacity="1" spacing="4" />
                         <Accordion type="single" collapsible className="w-full">
                           <AccordionItem value="item-1">
                             <AccordionTrigger>

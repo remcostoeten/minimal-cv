@@ -10,6 +10,7 @@ import ColoredLabel from "@/components/core/ColoredLabel";
 import Paragraph from "@/components/core/Text";
 import ProjectList from "./ProjectList";
 import { siteConfig } from "@/core/data/personal-data";
+import { themeColors } from "@/core/constants/colors";
 
 export default function ProjectSection() {
   return (
@@ -59,15 +60,19 @@ export default function ProjectSection() {
         <div className="flex flex-col">
           <ProjectList />
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-col sm:flex-row gap-2">
           <Link
             href="https://github.com/remcostoeten?tab=repositories"
             target="_blank"
           >
-            <CTAButton hasIcon>View all projects</CTAButton>
+            <CTAButton className="w-full" hasIcon>
+              View all projects
+            </CTAButton>
           </Link>
           <Link href={siteConfig.links.snippets} target="_blank">
-            <CTAButton hasIcon>View all snippets</CTAButton>
+            <CTAButton className="w-full" hasIcon>
+              View all snippets
+            </CTAButton>
           </Link>
         </div>
       </div>
@@ -81,13 +86,12 @@ function projectIcon() {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 256 256"
       height="24"
+      fill={themeColors.green}
       width="24"
       focusable="false"
-      color="var(--token-82600c9b-73af-46dc-b10d-4e1f7985fe89, rgb(0, 204, 150))"
       style={{
         userSelect: "none",
         display: "inline-block",
-        fill: "var(--token-82600c9b-73af-46dc-b10d-4e1f7985fe89, rgb(0, 204, 150))",
         color:
           "var(--token-82600c9b-73af-46dc-b10d-4e1f7985fe89, rgb(0, 204, 150))",
         flexShrink: 0,

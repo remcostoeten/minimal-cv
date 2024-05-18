@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { Button } from "../effects/moving-border";
 
 export function MovingBorderButton({ children }) {
