@@ -4,8 +4,11 @@ import React, { ReactNode } from "react";
 type CTAButtonProps = {
   children: ReactNode;
   bgColor?: string;
+  type?: "button" | "submit" | "reset";
   href?: string;
   hasIcon?: boolean;
+  className?: string;
+  onClick?: () => void;
 };
 
 export default function CTAButton({
@@ -13,12 +16,15 @@ export default function CTAButton({
   bgColor = "cardalt",
   href,
   hasIcon = false,
+  onClick,
+  type,
+  className,
   ...props
 }: CTAButtonProps) {
   return href ? (
     <Link
       href={href}
-      className={`cta-button flex flex-row items-center justify-center gap-1.5 h-[64px] px-6 text-green hover:bg-cardalt/80 hover:border-green/10 border border-transparent transition-all duration-400 ease-in-out bg-cardalt rounded-lg shadow-md cursor-pointer overflow-hidden relative hover:glow-green`}
+      className={`cta-button flex flex-row items-center justify-center gap-1.5 h-[48px] px-6 text-green hover:bg-cardalt/80 hover:border-green/10 border border-transparent transition-all duration-400 ease-in-out bg-cardalt rounded-lg shadow-md cursor-pointer overflow-hidden relative hover:glow-green ${className}`}
       {...props}
     >
       {children}
@@ -26,7 +32,9 @@ export default function CTAButton({
     </Link>
   ) : (
     <button
-      className={`cta-button flex flex-row items-center justify-center gap-1.5 h-[64px] px-6 text-green hover:bg-cardalt/80 hover:border-green/10 border border-transparent transition-all duration-600 ease-in-out bg-cardalt rounded-lg shadow-md cursor-pointer overflow-hidden relative hover:glow-green`}
+      type={type}
+      {...(onClick && { onClick })}
+      className={`cta-button flex flex-row items-center justify-center gap-1.5 h-[54px] px-6 text-green hover:bg-cardalt/80 hover:border-green/10 border border-transparent transition-all duration-600 ease-in-out bg-cardalt rounded-lg shadow-md cursor-pointer overflow-hidden relative hover:glow-green ${className}`}
       {...props}
     >
       {children}

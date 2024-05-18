@@ -1,18 +1,5 @@
 "use client";
 
-import { MovingBorderButton } from "@/components/core/BorderButton";
-import Paragraph from "@/components/core/Text";
-import { Button } from "@/components/ui/button";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
 import { siteConfig } from "@/core/data/personal-data";
 import { BEZIER_CURVES } from "@/core/lib/bezier-curves";
 import { motion } from "framer-motion";
@@ -29,37 +16,12 @@ export default function ProjectList() {
       anchor: "https://portfolio.remcostoeten.com/blackjack",
     },
     {
-      title: "A collection of useful utility scripts",
-      anchor: "https://github.com/remcostoeten/utility-scripts",
+      title: "A collection of useful utillity scripts",
+      anchor: "https://github.com/remcostoeten/utillity-scripts",
     },
   ];
   return (
     <div>
-      <Paragraph className="flex flex-col gap-2">
-        <span>And loads more which can be found on my resume here:</span>
-        <Drawer>
-          <DrawerTrigger>
-            <MovingBorderButton>Open resume</MovingBorderButton>
-          </DrawerTrigger>
-          <DrawerContent>
-            <DrawerHeader>
-              <DrawerTitle>My CV</DrawerTitle>
-              <DrawerDescription>This is my CV.</DrawerDescription>
-            </DrawerHeader>
-            <DrawerFooter>
-              <embed
-                src="/cvremcostoeten.pdf"
-                type="application/pdf"
-                width="100%"
-                height="600px"
-              />
-              <DrawerClose>
-                <Button variant="outline">Close</Button>
-              </DrawerClose>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
-      </Paragraph>
       <ul>
         {articles.map((article, index) => (
           <motion.li
@@ -92,14 +54,8 @@ export default function ProjectList() {
         ))}
       </ul>
       <div className="my-4">
-        And so much more... Some snippets over at{" "}
-        <Link
-          className="underline"
-          target="_blank"
-          href="http://snippets.remcostoeten.com"
-        >
-          snippets.remcostoeten.com
-        </Link>
+        And so much more... I also have a snippets site, guides, notes, and
+        other handy resources for my personal use.
       </div>
     </div>
   );

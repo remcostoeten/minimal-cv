@@ -15,45 +15,50 @@ export default function FooterShell() {
           </Paragraph>
         </div>
         <span className="w-full h-[1px] bg-zinc-600 opacity-50 my-2 sm:hidden" />
-        <div className="flex flex-col sm:text-right">
-          <Paragraph>
-            <Link
-              className="underline"
-              href={siteConfig.links.snippets}
-              target="_blank"
-            >
-              Snippets
-            </Link>
-          </Paragraph>
-          <Paragraph>
-            <Link
-              className="underline"
-              href={siteConfig.links.github}
-              target="_blank"
-            >
-              Github
-            </Link>
-          </Paragraph>
-          <div className="flex flex-col sm:hidden">
+        <div className="flex gap-2 sm:text-right">
+          <div className="flex flex-col-reverse">
             <Paragraph>
               <Link
                 className="underline"
-                href="https://portfolio.remcostoteten.com"
+                href={siteConfig.links.snippets}
                 target="_blank"
               >
-                Portfolio v2
+                Snippets
               </Link>
             </Paragraph>
+
             <Paragraph>
               <Link
                 className="underline"
-                href="        https://blog-remcostoetn-git-master2-remcostoetens-projects.vercel.app/
-                "
+                href={siteConfig.links.github}
                 target="_blank"
               >
-                Portfolio v3
+                Github
               </Link>
             </Paragraph>
+          </div>
+          <div>
+            <Paragraph>
+              <Link
+                className="underline"
+                href="https://portfolio.remcostoeten.com/"
+                target="_blank"
+              >
+                Portfolio v1
+              </Link>
+            </Paragraph>
+            <div className="flex flex-col">
+              <Paragraph>
+                <Link
+                  className="underline"
+                  href="        https://blog-remcostoetn-git-master2-remcostoetens-projects.vercel.app/
+                  "
+                  target="_blank"
+                >
+                  Portfolio v3
+                </Link>
+              </Paragraph>
+            </div>
           </div>
         </div>
       </div>

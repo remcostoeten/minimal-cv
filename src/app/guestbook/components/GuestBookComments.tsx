@@ -4,7 +4,6 @@ import "firebase/auth";
 import "firebase/firestore";
 import "firebase/auth";
 import "firebase/firestore";
-import Seperator from "@/components/shells/Separator";
 
 type GuestbookCommentsProps = {
   avatarSrc: string | null;

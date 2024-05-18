@@ -9,6 +9,7 @@ import { MovingBorderButton } from "@/components/core/BorderButton";
 import ColoredLabel from "@/components/core/ColoredLabel";
 import Paragraph from "@/components/core/Text";
 import ProjectList from "./ProjectList";
+import { siteConfig } from "@/core/data/personal-data";
 
 export default function ProjectSection() {
   return (
@@ -58,10 +59,17 @@ export default function ProjectSection() {
         <div className="flex flex-col">
           <ProjectList />
         </div>
-
-        <Link href="https://github.com/remcostoeten?tab=repositories">
-          <CTAButton hasIcon>All my projects</CTAButton>
-        </Link>
+        <div className="flex gap-2">
+          <Link
+            href="https://github.com/remcostoeten?tab=repositories"
+            target="_blank"
+          >
+            <CTAButton hasIcon>View all projects</CTAButton>
+          </Link>
+          <Link href={siteConfig.links.snippets} target="_blank">
+            <CTAButton hasIcon>View all snippets</CTAButton>
+          </Link>
+        </div>
       </div>
     </BentoBox>
   );

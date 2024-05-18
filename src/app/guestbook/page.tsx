@@ -27,6 +27,8 @@ import { useState, useEffect, FormEvent } from "react";
 import { toast } from "sonner";
 import BentoBox from "@/components/shells/BentoShell";
 import posthog from "posthog-js";
+import CTAButton from "@/components/core/Cta";
+import { themeColors } from "@/core/constants/colors";
 
 export type GuestbookEntry = {
   id?: string;
@@ -50,7 +52,6 @@ export default function GuestBookPage() {
   const indexOfLastEntry = currentPage * entriesPerPage;
   const indexOfFirstEntry = indexOfLastEntry - entriesPerPage;
   const currentEntries = entries.slice(indexOfFirstEntry, indexOfLastEntry);
-  const [id, setId] = useState("");
   useEffect(() => {
     const entriesRef = collection(firestore, "guestbook");
     const orderedEntriesQuery = query(entriesRef, orderBy("timestamp", "desc"));
@@ -79,6 +80,7 @@ export default function GuestBookPage() {
     event.preventDefault();
 
     if (newEntry.trim() === "") {
+      toast("Entry can't be empty!");
       return;
     }
 
@@ -115,13 +117,14 @@ export default function GuestBookPage() {
     setIsLoading(true);
     try {
       if (provider === "github") {
-        signInWithGithub();
+        await signInWithGithub();
         posthog.capture("sign_in", { provider: "github" });
+        toast("Signed in successfully with Github!");
       } else if (provider === "google") {
-        signInWithGoogle();
+        await signInWithGoogle();
         posthog.capture("sign_in", { provider: "google" });
+        toast("Signed in successfully with Google!");
       }
-      toast("Signed in successfully!");
     } catch (error) {
       console.error(error);
       toast("Error signing in!");
@@ -187,13 +190,12 @@ export default function GuestBookPage() {
                   placeholder="Leave a message"
                   className="flex min-h-[60px] w-full rounded-md border border-zinc-600 bg-transparent p-4 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
                 />
-                <Button
-                  variant="outline"
-                  className="!bg-transparent hover:text-zinc-400 border-zinc-600 text-sm text-muted-foreground"
+                <CTAButton
+                  className="border-zinc-600 !bg-transparent"
                   type="submit"
                 >
                   Post Entry
-                </Button>
+                </CTAButton>
               </form>
             ) : (
               <div className="flex flex-col gap-2">
@@ -201,20 +203,17 @@ export default function GuestBookPage() {
                   Please login in order to leave a message
                 </h4>
                 <div className="flex sm:items-center gap-2 flex-col sm:flex-row">
-                  <Button
-                    className="text-white"
-                    onClick={() => handleSignIn("github")}
-                  >
+                  <CTAButton onClick={() => handleSignIn("github")}>
                     <Icons.github className="mr-2 size-4" />
                     Sign In with Github
-                  </Button>
-                  <Button
-                    className="text-white"
-                    onClick={() => handleSignIn("google")}
-                  >
-                    <Icons.google.bnw className="mr-2 size-4" fill="white" />
+                  </CTAButton>
+                  <CTAButton onClick={() => handleSignIn("google")}>
+                    <Icons.google.bnw
+                      className="mr-2 size-4"
+                      fill={themeColors.green}
+                    />
                     Sign in with Google
-                  </Button>
+                  </CTAButton>
                 </div>
               </div>
             )}

@@ -60,6 +60,11 @@
   }
 }
 
+li[data-sonner-toast] button {
+  color: var(--body);
+  background-color: white;
+}
+
 @layer base {
   * {
     @apply border-border;

@@ -15,7 +15,7 @@ export function useDeleteDoc(
         toast.success(successMessage);
       } catch (error) {
         console.error("Error deleting document:", error);
-        toast.error(errorMessage);
+        toast.error(`${errorMessage}: ${error.message}`);
       }
     },
     [collectionName, successMessage, errorMessage],

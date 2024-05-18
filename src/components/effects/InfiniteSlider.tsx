@@ -14,9 +14,9 @@ function shuffleArray(array: any[]) {
 }
 
 const InfiniteSlider: React.FC = () => {
-  const [randomizedPills1, setRandomizedPills1] = useState(pills);
-  const [randomizedPills2, setRandomizedPills2] = useState(pills);
-  const [randomizedPills3, setRandomizedPills3] = useState(pills);
+  const [randomizedPills1, setRandomizedPills1] = useState([]);
+  const [randomizedPills2, setRandomizedPills2] = useState([]);
+  const [randomizedPills3, setRandomizedPills3] = useState([]);
 
   useEffect(() => {
     setRandomizedPills1(shuffleArray([...pills]));
@@ -24,12 +24,14 @@ const InfiniteSlider: React.FC = () => {
     setRandomizedPills3(shuffleArray([...pills]));
   }, []);
 
-  const slidesRow1: ReactElement[] = randomizedPills1.map((pill, index) => (
-    <Pill hasStar key={pill}>
-      {pill}
-    </Pill>
-  ));
-  const slidesRow2: ReactElement[] = randomizedPills2
+  const slidesRow1: ReactElement[] = shuffleArray([...randomizedPills1]).map(
+    (pill, index) => (
+      <Pill hasStar key={pill}>
+        {pill}
+      </Pill>
+    ),
+  );
+  const slidesRow2: ReactElement[] = shuffleArray([...randomizedPills2])
     .slice()
     .reverse()
     .map((pill, index) => (
@@ -37,11 +39,13 @@ const InfiniteSlider: React.FC = () => {
         {pill}
       </Pill>
     ));
-  const slidesRow3: ReactElement[] = randomizedPills3.map((pill, index) => (
-    <Pill hasStar key={pill}>
-      {pill}
-    </Pill>
-  ));
+  const slidesRow3: ReactElement[] = shuffleArray([...randomizedPills3]).map(
+    (pill, index) => (
+      <Pill hasStar key={pill}>
+        {pill}
+      </Pill>
+    ),
+  );
 
   return (
     <motion.div
