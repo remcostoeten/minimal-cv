@@ -38,7 +38,7 @@ export default function FooterShell() {
             </Paragraph>
           </div>
           <div>
-            <Paragraph>
+              <Paragraph className='hidden sm:block'>
               <Link
                 className="underline"
                 href="https://portfolio.remcostoeten.com/"
