@@ -44,6 +44,7 @@ export default function TimelineComponent() {
                         </p>
                       )}
                     </div>
+                    gi fixed all kinds of finishing touches 👌
                     {experience.details?.map((detail, detailIndex) => (
                       <p
                         key={detailIndex}
