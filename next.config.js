@@ -1,7 +1,6 @@
 const {
   withHydrationOverlay,
 } = require("@builder.io/react-hydration-overlay/next");
-const million = require("million/compiler");
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -17,14 +16,6 @@ const nextConfig = {
   },
 };
 
-const millionConfig = {
-  auto: {
-    threshold: 0.05, // default: 0.1,
-    skip: ["useBadHook", /badVariable/g], // default []
-    // if you're using RSC: auto: { rsc: true },
-  },
-};
-
 if (process.env.NODE_ENV === "development") {
   module.exports = withHydrationOverlay({
     /**
@@ -34,5 +25,5 @@ if (process.env.NODE_ENV === "development") {
     appRootSelector: "main",
   })(nextConfig);
 } else {
-  module.exports = million.next(nextConfig, millionConfig);
+  module.exports = nextConfig;
 }
