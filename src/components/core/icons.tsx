@@ -14,6 +14,64 @@ export function GraphqlIcon() {
     </svg>
   );
 }
+
+export function ErrorIcon() {
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="514"
+    height="164"
+    fill="none"
+    viewBox="0 0 514 164"
+  >
+    <circle cx="101" cy="22" r="20" stroke="#94969C" strokeWidth="2"></circle>
+    <circle cx="101" cy="142" r="20" stroke="#94969C" strokeWidth="2"></circle>
+    <circle cx="21" cy="102" r="20" stroke="#94969C" strokeWidth="2"></circle>
+    <circle cx="141" cy="102" r="20" stroke="#94969C" strokeWidth="2"></circle>
+    <circle cx="193" cy="82" r="20" stroke="#94969C" strokeWidth="2"></circle>
+    <circle cx="313" cy="82" r="20" stroke="#94969C" strokeWidth="2"></circle>
+    <circle cx="253" cy="22" r="20" stroke="#94969C" strokeWidth="2"></circle>
+    <circle cx="253" cy="142" r="20" stroke="#94969C" strokeWidth="2"></circle>
+    <path
+      stroke="#94969C"
+      strokeWidth="2"
+      d="M1 102c0-11.046 8.954-20 20-20h120c11.046 0 20 8.954 20 20s-8.954 20-20 20H21c-11.046 0-20-8.954-20-20z"
+    ></path>
+    <path
+      stroke="#94969C"
+      strokeWidth="2"
+      d="M101 162c-11.046 0-20-8.954-20-20V22c0-11.046 8.954-20 20-20s20 8.954 20 20v120c0 11.046-8.954 20-20 20z"
+    ></path>
+    <path
+      stroke="#94969C"
+      strokeWidth="2"
+      d="M7.142 115.995c-7.81-7.81-7.81-20.474 0-28.284L86.711 8.142c7.81-7.81 20.473-7.81 28.284 0 7.81 7.81 7.81 20.474 0 28.285l-79.569 79.568c-7.81 7.811-20.473 7.811-28.284 0z"
+    ></path>
+    <circle cx="453" cy="22" r="20" stroke="#94969C" strokeWidth="2"></circle>
+    <circle cx="453" cy="142" r="20" stroke="#94969C" strokeWidth="2"></circle>
+    <circle cx="373" cy="102" r="20" stroke="#94969C" strokeWidth="2"></circle>
+    <circle cx="493" cy="102" r="20" stroke="#94969C" strokeWidth="2"></circle>
+    <path
+      stroke="#94969C"
+      strokeWidth="2"
+      d="M353 102c0-11.046 8.954-20 20-20h120c11.046 0 20 8.954 20 20s-8.954 20-20 20H373c-11.046 0-20-8.954-20-20z"
+    ></path>
+    <path
+      stroke="#94969C"
+      strokeWidth="2"
+      d="M453 162c-11.046 0-20-8.954-20-20V22c0-11.046 8.954-20 20-20s20 8.954 20 20v120c0 11.046-8.954 20-20 20z"
+    ></path>
+    <path
+      stroke="#94969C"
+      strokeWidth="2"
+      d="M359.142 115.995c-7.81-7.81-7.81-20.474 0-28.284l79.569-79.569c7.81-7.81 20.473-7.81 28.284 0 7.81 7.81 7.81 20.474 0 28.285l-79.569 79.568c-7.81 7.811-20.473 7.811-28.284 0z"
+    ></path>
+    <circle cx="253" cy="82" r="80" stroke="#94969C" strokeWidth="2"></circle>
+    <circle cx="253" cy="82" r="40" stroke="#94969C" strokeWidth="2"></circle>
+    <path stroke="#94969C" strokeWidth="2" d="M0 1L513 1"></path>
+    <path stroke="#94969C" strokeWidth="2" d="M0 163L513 163"></path>
+  </svg>;
+}
+
 export function GraphqlIconRegular() {
   return (
     <svg

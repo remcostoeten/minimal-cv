@@ -56,10 +56,13 @@ export default function StackSection({ limit = false }: StackSectionProps) {
       <BentoTitle icon={SkillIcon()}>Techstack</BentoTitle>
       <div className="flex flex-col gap-2">
         <Paragraph spacing="4">
-          I train NextJS and TypeScript. Besides that, I have dabbled a little
-          bit in Python, Lua, Svelte, and Bash. I find all technologies
-          interesting and am planning on playing around with Go, eventually
-          transitioning into full-stack (real full stack, not just JS + CRUD).
+          I love to build with NextJS and TypeScript. Besides that, I have
+          dabbled a little bit in Python, Lua, Svelte, and Bash. I find all
+          technologies interesting and am planning on playing around with Go,
+          eventually transitioning into full-stack (real full stack, not just JS
+          + CRUD). I used to work on macOS but I switched to Linux (Pop!_OS) and
+          do not think I'll be going back. Linux is so much faster, macOS{" "}
+          <span className="text-xs line-through">feels</span> sluggish.
         </Paragraph>
         <motion.div
           variants={container}
