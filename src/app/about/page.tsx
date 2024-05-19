@@ -53,7 +53,6 @@ export default function TimelineComponent() {
                         {detail}
                       </p>
                     ))}
-
                     {experience.projects && (
                       <>
                         <Accordion type="single" collapsible className="w-full">

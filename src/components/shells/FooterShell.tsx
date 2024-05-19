@@ -46,12 +46,12 @@ export default function FooterShell() {
               >
                 Portfolio v1
               </Link>
-              <Link className='sm:hidden underline'
-
-              href={siteConfig.links.linkedin}
-              target="_blank"
-              >LinkedIn
-
+              <Link
+                className="sm:hidden underline"
+                href={siteConfig.links.linkedin}
+                target="_blank"
+              >
+                LinkedIn
               </Link>
             </Paragraph>
             <div className="flex flex-col">

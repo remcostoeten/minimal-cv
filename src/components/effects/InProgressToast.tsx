@@ -25,7 +25,7 @@ export default function InProgressToast() {
 
   return (
     <>
-      <Toaster closeButton position="bottom-center" />
+      <Toaster invert closeButton position="bottom-center" />
     </>
   );
 }

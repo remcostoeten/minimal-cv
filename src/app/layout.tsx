@@ -8,8 +8,9 @@ import SiteInProgressNotification from "@/components/effects/InProgressToast";
 import { AuthUserProvider } from "@/components/AuthUserProvider.";
 
 export const metadata: Metadata = {
-  title: "Remco Stoeten",
-  description: "Minimal landing page",
+  title: "Remco Stoeten - remcostoeten.nl",
+  description:
+    "A dutch front-end developer. Or as we say in NL, a divjesschuiver",
 };
 
 export default function RootLayout({
