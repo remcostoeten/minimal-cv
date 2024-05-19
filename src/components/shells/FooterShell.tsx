@@ -58,8 +58,7 @@ export default function FooterShell() {
               <Paragraph>
                 <Link
                   className="underline"
-                  href="        https://blog-remcostoetn-git-master2-remcostoetens-projects.vercel.app/
-                  "
+                  href="https://blog.remcostoeten.com/"
                   target="_blank"
                 >
                   Portfolio v3
