@@ -61,8 +61,8 @@ export default function StackSection({ limit = false }: StackSectionProps) {
           technologies interesting and am planning on playing around with Go,
           eventually transitioning into full-stack (real full stack, not just JS
           + CRUD). I used to work on macOS but I switched to Linux (Pop!_OS) and
-          do not think I'll be going back. Linux is so much faster, macOS{" "}
-          <span className="text-xs line-through">feels</span> sluggish.
+          do not think I'll be going back. Linux is so much faster, macOS feels{" "}
+          <span className="text-xs line-through">is</span> sluggish.
         </Paragraph>
         <motion.div
           variants={container}
