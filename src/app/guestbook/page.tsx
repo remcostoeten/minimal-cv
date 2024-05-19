@@ -139,7 +139,7 @@ export default function GuestBookPage() {
   return (
     <BentoBox>
       <AnimatePresence>
-        <BentoTitle icon={GuestbookIcon()}>Projects</BentoTitle>
+        <BentoTitle icon={GuestbookIcon()}>Guestbook</BentoTitle>
         <Paragraph>
           Leave something nice to say (optional, I can handle some criticism).
         </Paragraph>
