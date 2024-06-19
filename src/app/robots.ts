@@ -1,6 +1,4 @@
-import type { MetadataRoute } from 'next/dist/lib/metadata/types/metadata-interface'
-
-const getBaseUrl = 'https://remcostoeten.com'
+import type { MetadataRoute } from 'next/dist/lib/metadata/types/metadata-interface';
 
 export default function robots(): MetadataRoute.Robots {
     return {
@@ -8,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
             userAgent: '*',
             allow: '/'
         },
-        sitemap: `${getBaseUrl()}/sitemap.xml`
+        sitemap: 'https://remcostoeten.com/sitemap.xml'
     }
 }
